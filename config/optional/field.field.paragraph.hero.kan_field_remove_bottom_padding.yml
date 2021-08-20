@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_remove_bottom_padding
+    - paragraphs.paragraphs_type.kan_hero
+id: paragraph.hero.kan_field_remove_bottom_padding
+field_name: kan_field_remove_bottom_padding
+entity_type: paragraph
+bundle: kan_hero
+label: 'Remove bottom padding'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

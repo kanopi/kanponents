@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_caption
+    - paragraphs.paragraphs_type.kan_media
+id: paragraph.media.kan_field_caption
+field_name: kan_field_caption
+entity_type: paragraph
+bundle: kan_media
+label: Caption
+description: 'Enter a media caption. <strong>Note, the caption only applies to image and video.</strong>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

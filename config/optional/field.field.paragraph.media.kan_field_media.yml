@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_media
+    - media.type.kan_document
+    - media.type.kan_image
+    - media.type.kan_remote_video
+    - paragraphs.paragraphs_type.kan_media
+id: paragraph.media.field_media
+field_name: kan_field_media
+entity_type: paragraph
+bundle: kan_media
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      kan_document: kan_document
+      kan_image: kan_image
+      kan_remote_video: kan_remote_video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: kan_image
+field_type: entity_reference

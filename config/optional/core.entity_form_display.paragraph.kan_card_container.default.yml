@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_container.kan_field_card
+    - field.field.paragraph.card_container.kan_field_heading
+    - field.field.paragraph.card_container.kan_field_overline
+    - paragraphs.paragraphs_type.kan_card_container
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_headings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Tabs
+    group_content:
+      children:
+        - kan_field_card
+      parent_name: group_tabs
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        description: 'Add card items below. If 3 or more are added, then the card row will transform into a carousel.'
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Content
+    group_headings:
+      children:
+        - kan_field_overline
+        - kan_field_heading
+      parent_name: group_tabs
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Headings
+id: paragraph.kan_card_container.default
+targetEntityType: paragraph
+bundle: card_container
+mode: default
+content:
+  kan_field_card:
+    type: paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: add_above
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  kan_field_heading:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_overline:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

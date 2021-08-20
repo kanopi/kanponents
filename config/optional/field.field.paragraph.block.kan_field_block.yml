@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_block
+    - paragraphs.paragraphs_type.kan_block
+  module:
+    - block_field
+id: paragraph.block.kan_field_block
+field_name: kan_field_block
+entity_type: paragraph
+bundle: kan_block
+label: Block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      scs_glossary: scs_glossary
+field_type: block_field

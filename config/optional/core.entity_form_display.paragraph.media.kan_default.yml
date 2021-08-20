@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media.kan_field_caption
+    - field.field.paragraph.media.kan_field_full_width_media
+    - field.field.paragraph.media.kan_field_image_offset_color
+    - field.field.paragraph.media.kan_field_media
+    - paragraphs.paragraphs_type.kan_media
+  module:
+    - media_library
+    - media_library_edit
+id: paragraph.kan_media.default
+targetEntityType: paragraph
+bundle: kan_media
+mode: default
+content:
+  kan_field_caption:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_full_width_media:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  kan_field_image_offset_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  kan_field_media:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types:
+        - image
+        - remote_video
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+    region: content
+hidden:
+  created: true
+  status: true

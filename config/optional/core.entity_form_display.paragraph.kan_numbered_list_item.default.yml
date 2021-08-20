@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.numbered_list_item.kan_field_heading
+    - field.field.paragraph.numbered_list_item.kan_field_text
+    - paragraphs.paragraphs_type.kan_numbered_list_item
+  module:
+    - text
+id: paragraph.kan_numbered_list_item.default
+targetEntityType: paragraph
+bundle: kan_numbered_list_item
+mode: default
+content:
+  kan_field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

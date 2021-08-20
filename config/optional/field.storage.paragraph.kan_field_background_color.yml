@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.kan_field_background_color
+field_name: kan_field_background_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: background_blue
+      label: Blue
+    -
+      value: background_med_blue
+      label: 'Medium Blue'
+    -
+      value: background_orange
+      label: Orange
+    -
+      value: background-gray
+      label: Gray
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

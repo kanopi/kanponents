@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.filtered_list.kan_field_background_color
+    - field.field.paragraph.filtered_list.kan_field_heading
+    - field.field.paragraph.filtered_list.kan_field_overline
+    - field.field.paragraph.filtered_list.kan_field_remove_top_padding
+    - field.field.paragraph.filtered_list.kan_field_views
+    - paragraphs.paragraphs_type.kan_filtered_list
+  module:
+    - viewfield
+id: paragraph.kan_filtered_list.default
+targetEntityType: paragraph
+bundle: kan_filtered_list
+mode: default
+content:
+  kan_field_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  kan_field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_overline:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_remove_top_padding:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  kan_field_views:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
+hidden:
+  created: true
+  status: true

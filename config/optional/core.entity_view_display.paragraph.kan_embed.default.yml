@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed.kan_field_calendar
+    - field.field.paragraph.embed.kan_field_text
+    - paragraphs.paragraphs_type.kan_embed
+  module:
+    - text
+id: paragraph.kan_embed.default
+targetEntityType: paragraph
+bundle: kan_embed
+mode: default
+content:
+  kan_field_calendar:
+    weight: 1
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  kan_field_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

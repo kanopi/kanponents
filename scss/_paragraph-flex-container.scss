@@ -1,0 +1,23 @@
+.paragraph--type--flex-container {
+  max-width: 1312px;
+  margin: 74px auto 108px;
+  padding: 0 16px;
+
+  > .field-title {
+    @include fs-paragraph-title-small;
+    margin-bottom: .5em;
+
+    @include breakpoint($bp-small) {
+      @include fs-paragraph-title;
+    }
+  }
+
+  .field-paragraphs {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint($bp-large) {
+      justify-content: space-between;
+    }
+  }
+}

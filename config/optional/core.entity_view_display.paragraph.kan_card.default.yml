@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card.kan_field_heading
+    - field.field.paragraph.card.kan_field_image
+    - field.field.paragraph.card.kan_field_link
+    - paragraphs.paragraphs_type.kan_card
+  module:
+    - link
+id: paragraph.kan_card.default
+targetEntityType: paragraph
+bundle: kan_card
+mode: default
+content:
+  kan_field_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: card_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  kan_field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+hidden:
+  search_api_excerpt: true

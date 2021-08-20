@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.columns.kan_field_background_color
+    - field.field.paragraph.columns.kan_field_background_offset
+    - field.field.paragraph.columns.kan_field_column_style
+    - field.field.paragraph.columns.kan_field_columns
+    - field.field.paragraph.columns.kan_field_full_width
+    - field.field.paragraph.columns.kan_field_remove_top_padding
+    - field.field.paragraph.columns.kan_field_vert_alignment
+    - paragraphs.paragraphs_type.kan_columns
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.kan_columns.default
+targetEntityType: paragraph
+bundle: kan_columns
+mode: default
+content:
+  kan_field_background_color:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  kan_field_background_offset:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  kan_field_column_style:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  kan_field_columns:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  kan_field_full_width:
+    weight: 4
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  kan_field_remove_top_padding:
+    weight: 5
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  kan_field_vert_alignment:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  search_api_excerpt: true

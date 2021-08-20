@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_numbered_list_item
+    - paragraphs.paragraphs_type.kan_numbered_list
+    - paragraphs.paragraphs_type.kan_numbered_list_item
+  module:
+    - entity_reference_revisions
+id: paragraph.numbered_list.kan_field_numbered_list_item
+field_name: kan_field_numbered_list_item
+entity_type: paragraph
+bundle: kan_numbered_list
+label: 'Numbered List Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      kan_numbered_list_item: kan_numbered_list_item
+    target_bundles_drag_drop:
+      kan_accordion:
+        weight: 11
+        enabled: false
+      kan_accordion_item:
+        weight: 12
+        enabled: false
+      kan_card:
+        weight: 13
+        enabled: false
+      kan_card_container:
+        weight: 14
+        enabled: false
+      kan_hero:
+        weight: 15
+        enabled: false
+      kan_numbered_list:
+        weight: 16
+        enabled: false
+      kan_numbered_list_item:
+        enabled: true
+        weight: 17
+      kan_quicklinks:
+        weight: 18
+        enabled: false
+      kan_quicklinks_item:
+        weight: 19
+        enabled: false
+      kan_text:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

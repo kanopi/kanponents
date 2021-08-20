@@ -1,0 +1,19 @@
+uuid: a29652d9-0c5e-407b-9923-27f18d75d498
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_heading
+    - paragraphs.paragraphs_type.kan_card_container
+id: paragraph.card_container.kan_field_heading
+field_name: kan_field_heading
+entity_type: paragraph
+bundle: kan_card_container
+label: Header
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

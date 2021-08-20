@@ -1,0 +1,128 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.columns.kan_field_background_color
+    - field.field.paragraph.columns.kan_field_background_offset
+    - field.field.paragraph.columns.kan_field_column_style
+    - field.field.paragraph.columns.kan_field_columns
+    - field.field.paragraph.columns.kan_field_full_width
+    - field.field.paragraph.columns.kan_field_remove_top_padding
+    - field.field.paragraph.columns.kan_field_vert_alignment
+    - paragraphs.paragraphs_type.kan_columns
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_columns_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Tabs
+    group_columns_content:
+      children:
+        - kan_field_columns
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Columns content'
+    group_settings:
+      children:
+        - kan_field_background_color
+        - kan_field_column_style
+        - kan_field_full_width
+        - kan_field_remove_top_padding
+        - kan_field_background_offset
+        - kan_field_vert_alignment
+      parent_name: group_tabs
+      weight: 9
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+id: paragraph.kan_columns.default
+targetEntityType: paragraph
+bundle: kan_columns
+mode: default
+content:
+  kan_field_background_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  kan_field_background_offset:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  kan_field_column_style:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  kan_field_columns:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: add_above
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  kan_field_full_width:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  kan_field_remove_top_padding:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  kan_field_vert_alignment:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

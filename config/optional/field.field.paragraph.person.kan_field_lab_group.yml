@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_lab_group
+    - group.type.kan_lab
+    - paragraphs.paragraphs_type.kan_person
+id: paragraph.person.kan_field_lab_group
+field_name: kan_field_lab_group
+entity_type: paragraph
+bundle: kan_person
+label: Lab
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:group'
+  handler_settings:
+    target_bundles:
+      kan_lab: kan_lab
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

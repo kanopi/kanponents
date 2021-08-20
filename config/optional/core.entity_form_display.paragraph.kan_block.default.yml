@@ -1,0 +1,26 @@
+uuid: 3acaf7c7-4f70-421e-9288-e89edfd15e60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block.kan_field_block
+    - paragraphs.paragraphs_type.kan_block
+  module:
+    - block_field
+id: paragraph.kan_block.default
+targetEntityType: paragraph
+bundle: kan_block
+mode: default
+content:
+  field_block:
+    weight: 0
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.kan_field_image_offset_color
+field_name: kan_field_image_offset_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: top_left_blue
+      label: 'Top left blue'
+    -
+      value: top_right_blue
+      label: 'Top right blue'
+    -
+      value: bottom_left_blue
+      label: 'Bottom left blue'
+    -
+      value: bottom_right_blue
+      label: 'Bottom right blue'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

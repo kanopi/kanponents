@@ -1,0 +1,10 @@
+{
+  "name": "drupal/kanponents",
+  "description": "A reusable Paragraph Bundle built for USCF.",
+  "type": "drupal-module",
+  "require": {
+    "drupal/core": "*"
+  },
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}

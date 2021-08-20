@@ -1,0 +1,31 @@
+{% set classes = [
+  'js-tabs',
+  'layout-left-30-70',
+  'vertical-tab'
+] %}
+
+{{ attach_library('ucsf/vertical_tabs') }}
+<div class="vertical-tab__paragraph-title">{{ content.field_title }}</div>
+<div{{ attributes.addClass(classes) }}>
+
+  {# titles #}
+  <ul class="vertical-tab__title js-tablist field-column-30">
+    {% for paragraph_vertical_tab in paragraph.field_tabs %}
+      <li role="presentation">
+        <a href="#tabs-{{ loop.index }}">
+          {{ paragraph_vertical_tab.entity.field_tab_title.value }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {# content #}
+  <div class="vertical-tab__body js-accordion">
+  {% for paragraph_vertical_tab in paragraph.field_tabs %}
+    <h2 href="#tabs-{{ loop.index }}">{{ paragraph_vertical_tab.entity.field_tab_title.value }}</h2>
+    <div id="tabs-{{ loop.index }}" class="field-column-70">
+      {{ drupal_field('field_tab_content','paragraph', paragraph_vertical_tab.value.target_id) }}
+    </div>
+  {% endfor %}
+  </div>
+</div>

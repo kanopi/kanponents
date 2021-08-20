@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text.kan_field_background_color
+    - field.field.paragraph.text.kan_field_heading
+    - field.field.paragraph.text.kan_field_overline
+    - field.field.paragraph.text.kan_field_text
+    - field.field.paragraph.text.kan_field_title_h1
+    - paragraphs.paragraphs_type.kan_text
+  module:
+    - options
+    - text
+id: paragraph.kan_text.default
+targetEntityType: paragraph
+bundle: kan_text
+mode: default
+content:
+  kan_field_background_color:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  kan_field_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_overline:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  kan_field_title_h1:
+    weight: 4
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  search_api_excerpt: true

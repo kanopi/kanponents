@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.linksbar_item.kan_field_link
+    - paragraphs.paragraphs_type.kan_linksbar_item
+  module:
+    - link_attributes
+id: paragraph.kan_linksbar_item.default
+targetEntityType: paragraph
+bundle: kan_linksbar_item
+mode: default
+content:
+  kan_field_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+hidden:
+  created: true
+  status: true

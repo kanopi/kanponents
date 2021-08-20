@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media.kan_field_caption
+    - field.field.paragraph.media.kan_field_full_width_media
+    - field.field.paragraph.media.kan_field_image_offset_color
+    - field.field.paragraph.media.kan_field_media
+    - paragraphs.paragraphs_type.media
+  module:
+    - options
+id: paragraph.kan_media.default
+targetEntityType: paragraph
+bundle: kan_media
+mode: default
+content:
+  kan_field_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_full_width_media:
+    weight: 3
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  kan_field_image_offset_color:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  kan_field_media:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

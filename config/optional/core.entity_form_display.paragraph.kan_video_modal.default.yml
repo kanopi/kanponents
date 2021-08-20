@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_modal.kan_field_heading
+    - field.field.paragraph.video_modal.kan_field_media
+    - paragraphs.paragraphs_type.kan_video_modal
+  module:
+    - media_library
+    - media_library_edit
+id: paragraph.kan_video_modal.default
+targetEntityType: paragraph
+bundle: kan_video_modal
+mode: default
+content:
+  kan_field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_media:
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+    type: media_library_widget
+    region: content
+hidden:
+  created: true
+  status: true

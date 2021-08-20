@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.linksbar_item.kan_field_link
+    - paragraphs.paragraphs_type.kan_linksbar_item
+  module:
+    - link
+id: paragraph.kan_linksbar_item.default
+targetEntityType: paragraph
+bundle: kan_linksbar_item
+mode: default
+content:
+  kan_field_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 140
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true

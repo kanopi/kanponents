@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion_item.kan_field_components
+    - field.field.paragraph.accordion_item.kan_field_heading
+    - paragraphs.paragraphs_type.kan_accordion_item
+  module:
+    - entity_reference_revisions
+id: paragraph.kan_accordion_item.default
+targetEntityType: paragraph
+bundle: kan_accordion_item
+mode: default
+content:
+  kan_field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  kan_field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

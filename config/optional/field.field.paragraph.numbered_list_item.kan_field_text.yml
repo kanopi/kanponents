@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_text
+    - paragraphs.paragraphs_type.kan_numbered_list_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    plain_text: '0'
+id: paragraph.numbered_list_item.kan_field_text
+field_name: kan_field_text
+entity_type: paragraph
+bundle: kan_numbered_list_item
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

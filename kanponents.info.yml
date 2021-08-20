@@ -1,0 +1,13 @@
+name: Kanopi Paragraphs
+type: module
+description: A reusable collection of Paragraph bundles.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Paragraphs
+dependencies:
+  - paragraphs
+
+# Information added by Drupal.org packaging script on 2020-10-08
+version: '8.x.0'
+project: 'kanponents'
+datestamp: 1602190349

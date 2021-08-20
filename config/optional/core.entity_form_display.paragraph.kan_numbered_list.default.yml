@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.numbered_list.kan_field_heading
+    - field.field.paragraph.numbered_list.kan_field_numbered_list_item
+    - field.field.paragraph.numbered_list.kan_field_overline
+    - paragraphs.paragraphs_type.kan_numbered_list
+  module:
+    - paragraphs
+id: paragraph.kan_numbered_list.default
+targetEntityType: paragraph
+bundle: kan_numbered_list
+mode: default
+content:
+  kan_field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  kan_field_numbered_list_item:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  kan_field_overline:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

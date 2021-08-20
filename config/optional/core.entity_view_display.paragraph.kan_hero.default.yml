@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero.kan_field_background
+    - field.field.paragraph.hero.kan_field_heading
+    - field.field.paragraph.hero.kan_field_hero_overlay
+    - field.field.paragraph.hero.kan_field_remove_bottom_padding
+    - field.field.paragraph.hero.kan_field_text
+    - paragraphs.paragraphs_type.kan_hero
+  module:
+    - text
+id: paragraph.kan_hero.default
+targetEntityType: paragraph
+bundle: kan_hero
+mode: default
+content:
+  kan_field_background:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    region: content
+  kan_field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_hero_overlay:
+    type: boolean
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+  kan_field_remove_bottom_padding:
+    weight: 4
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  kan_field_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

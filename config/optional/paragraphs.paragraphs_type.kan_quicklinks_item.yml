@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: kan_quicklinks_item
+label: 'Quicklinks Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

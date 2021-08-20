@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quicklinks.kan_field_heading
+    - field.field.paragraph.quicklinks.kan_field_overline
+    - field.field.paragraph.quicklinks.kan_field_quicklink_items
+    - paragraphs.paragraphs_type.kan_quicklinks
+  module:
+    - entity_reference_revisions
+id: paragraph.kan_quicklinks.default
+targetEntityType: paragraph
+bundle: kan_quicklinks
+mode: default
+content:
+  kan_field_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_overline:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  kan_field_quicklink_items:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true
