@@ -13,6 +13,7 @@ dependencies:
   - maxlength:maxlength
   - viewfield:viewfield
   - entity_reference_revisions:entity_reference_revisions
+  - twig_field_value:twig_field_value
 
 # Information added by Drupal.org packaging script on 2020-10-08
 version: '8.x.0'
