@@ -39,16 +39,14 @@
  */
 #}
 
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
+{# if link target is not empty, set a variable. #}
+{% if content.field_link.0["#url"].getOptions().attributes .target | render %}
+  {% set target = 'rel=noopener target = _' ~ content.field_link.0["#url"].getOptions().attributes .target %}
 {% endif %}
 
 {% set classes = [
-  'hero',
+  'card__item',
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -58,41 +56,36 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
+      <div class="card__item-inner">
 
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+        {% block media %}
+        {% if content.field_image | render %}
+          <div class="card__media">
+            {{ content.field_image | field_value }}
           </div>
+        {% endif %}
+        {% endblock %}
 
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
+        <div class="card__content">
 
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
+          {% if content.field_heading | render %}
+            <div class="card__title">
+              <h2>{{ content.field_heading | field_value }}</h2>
             </div>
-          </div>
+          {% endif %}
+
+          {% if content.field_link | render %}
+            <div class="card__link">
+              <a class="btn btn-hollow"
+                 href="{{ content.field_link.0["#url_title"] }}"
+                {{ target }}
+                 role="button"
+                 title="{{ 'Learn more about'|t }} {{ content.field_heading | field_value }}"
+                 aria-label="{{ 'Learn more about'|t }} {{ content.field_heading | field_value }}">
+                {{ 'Learn More'|t }}
+              </a>
+            </div>
+          {% endif %}
 
         </div>
       </div>

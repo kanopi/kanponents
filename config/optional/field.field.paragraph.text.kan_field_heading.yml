@@ -7,7 +7,7 @@ dependencies:
 id: paragraph.text.kan_field_heading
 field_name: kan_field_heading
 entity_type: paragraph
-bundle: text
+bundle: kan_text
 label: Heading
 description: 'Create an H2 heading.'
 required: false

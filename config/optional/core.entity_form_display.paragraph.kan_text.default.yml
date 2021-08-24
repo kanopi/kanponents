@@ -73,7 +73,7 @@ third_party_settings:
       label: Settings
 id: paragraph.kan_text.default
 targetEntityType: paragraph
-bundle: text
+bundle: kan_text
 mode: default
 content:
   kan_field_background_color:

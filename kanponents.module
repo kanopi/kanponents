@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Bootstrap Paragraphs Callout module file.
+ * Kanponents Paragraphs module file.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,60 +10,69 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_theme().
  */
-// function bp_columns_theme($existing, $type, $theme, $path) {
-//   return [
-//     'paragraph__bp_columns' => [
-//       'base hook' => 'paragraph',
-//     ],
-//   ];
-// }
-
-function bp_columns_theme($existing, $type, $theme, $path){
-  $theme_templates  = [];
-  $paragraph_types  = bp_columns_get_paragraph_types();
-
-  // Register custom Paragraph bundle templates
-  foreach ($paragraph_types as $paragraph_type){
-    $theme_templates['paragraph__columns' . $paragraph_type] = [
-      'base hook' => 'paragraph'
-    ];
-  }
-
-  // Register custom Paragraph bundle template fallback
-  $theme_templates['paragraph__columns'] = [
-    'base hook' => 'paragraph'
+function kanponents_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__kan_accordion' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_accordion_item' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_block' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_card' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_card_container' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_columns' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_embed' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_filtered_list' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_hero' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_links_bar' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_media' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_numbered_list_item' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_numbered_list' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_quicklinks_item' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_quicklinks' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_text' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__kan_video_modal' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__entity_reference_revisions' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__kan_field_components' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__kan_paragraph_field_columns__columns' => [
+      'base hook' => 'paragraph',
+    ],
   ];
-
-  // Register custom Paragraph field
-  $theme_templates['field__paragraph__bp_column_content'] = [
-    'base hook' => 'field',
-  ];
-
-  return $theme_templates;
-}
-
-/**
- * Implements HOOK_theme_suggestions_HOOK_alter
- */
-function bp_columns_theme_suggestions_field_alter(array &$suggestions, array $variables, $hook) {
-  $field = $variables['element']['#field_name'];
-
-  if( $field == 'field__paragraph__bp_column_content' ) {
-    $suggestions[] = 'field__paragraph__bp_column_content';
-  }
-}
-
-/**
- * Implements HOOK_theme_suggestions_HOOK_alter
- */
-function bp_columns_theme_suggestions_paragraph_alter(&$suggestions, $variables){
-  $entity              = $variables['elements']['#paragraph'];
-  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
-  $type                = $entity->getType();
-
-  $suggestions[] = 'paragraph__bp_columns';
-  $suggestions[] = 'paragraph__bp_columns__' . $type;
-  $suggestions[] = 'paragraph__bp_columns__' . $type . '__' . $sanitized_view_mode;
 }
 
 /**
@@ -71,9 +80,9 @@ function bp_columns_theme_suggestions_paragraph_alter(&$suggestions, $variables)
  *
  * @inheritdoc
  */
-function bp_columns_help($route_name, RouteMatchInterface $route_match) {
+function kanponents_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    case 'help.page.bp_columns':
+    case 'help.page.kanponents':
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
         return '<pre>' . $text . '</pre>';

@@ -38,17 +38,11 @@
  * @ingroup themeable
  */
 #}
-
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
-{% endif %}
+{{ attach_library('ucsf_dermatology_th/linksbar') }}
 
 {% set classes = [
-  'hero',
+  'links-bar',
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -57,43 +51,26 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      <div class="links-bar__container">
+        <div class="links-bar__wrap">
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
+          {% for key, item in content.field_linksbar_item if key|first != '#' %}
+            <div class="links-bar__item links-bar__item--index-{{- loop.index -}}">
 
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+              {% if item['#paragraph'].field_link.0.options.attributes.target | render %}
+                {% set target = 'rel=noopener target = _' ~ item['#paragraph'].field_link.0.options.attributes.target %}
+              {% endif %}
 
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-          </div>
-
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
-
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
+              <a class="links-bar__item-link"
+                 href="{{ item['#paragraph'].field_link.0.url }}"
+                {{ target }}
+                 role="button"
+                 title="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}"
+                 aria-label="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}">
+                {{ item['#paragraph'].field_link.title }}
+              </a>
             </div>
-          </div>
-
+          {% endfor %}
         </div>
       </div>
     {% endblock %}

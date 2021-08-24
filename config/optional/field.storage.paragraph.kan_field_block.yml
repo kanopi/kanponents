@@ -7,7 +7,7 @@ dependencies:
 id: paragraph.kan_field_block
 field_name: kan_field_block
 entity_type: paragraph
-type: kan_block_field
+type: block_field
 settings: {  }
 module: block_field
 locked: false

@@ -38,17 +38,9 @@
  * @ingroup themeable
  */
 #}
-
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
-{% endif %}
-
 {% set classes = [
-  'hero',
+  'c-accordion__item',
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -58,44 +50,18 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
+      {% if content.field_heading | render %}
+        <span class="js-accordion__header c-accordion__title">{{ content.field_heading | field_value }}</span>
+      {% endif %}
 
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+      {% if content.field_components | render %}
+        <div class="c-accordion__item-components js-accordion__panel">
+          <div class="c-accordion__item-content">
+            {{ content.field_components | field_value }}
           </div>
-
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
-
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
+      {% endif %}
+
     {% endblock %}
   </div>
 {% endblock paragraph %}

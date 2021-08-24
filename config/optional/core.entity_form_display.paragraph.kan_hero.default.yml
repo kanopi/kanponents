@@ -14,7 +14,7 @@ dependencies:
     - text
 id: paragraph.kan_hero.default
 targetEntityType: paragraph
-bundle: hero
+bundle: kan_hero
 mode: default
 content:
   kan_field_background:

@@ -10,7 +10,7 @@ dependencies:
     - entity_reference_revisions
 id: paragraph.kan_card_container.default
 targetEntityType: paragraph
-bundle: card_container
+bundle: kan_card_container
 mode: default
 content:
   kan_field_card:

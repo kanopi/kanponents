@@ -39,16 +39,29 @@
  */
 #}
 
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
+{# Check for top padding remove #}
+{% if content.field_full_width_media[0]["#markup"] == 1 %}
+  {% set full_width_media = 'c-media--full-width' %}
 {% endif %}
 
+{# The offset if it exists. #}
+{% if content.field_image_offset_color | render %}
+  {% set offset_color = 'offset-color' %}
+  {% set offset = 'offset-color--' ~ content.field_image_offset_color.0["#markup"] %}
+{% endif %}
+
+{# The media bundle. #}
+{% set bundle = content.field_media.0["#media"].bundle.getString() %}
+
+{{ attach_library('ucsf_dermatology_th/media') }}
+
 {% set classes = [
-  'hero',
+  'c-media',
+  'c-media--' ~ bundle | clean_class,
+  offset_color,
+  full_width_media | clean_class,
+  offset | clean_class,
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -58,44 +71,23 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
+      {% if ( bundle == 'image' ) or ( bundle == 'remote_video' ) %}
 
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+        <figure class="c-media__image-video">
+          {{ content.field_media | field_value }}
 
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-          </div>
+          {% if content.field_caption | render %}
+            <figcaption class="c-media__caption">
+              {{ content.field_caption | field_value }}
+            </figcaption>
+          {% endif %}
+        </figure>
 
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
+      {% else %}
+        {# Docuemnts et al. #}
+        {{ content.field_media | field_value }}
+      {% endif %}
 
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

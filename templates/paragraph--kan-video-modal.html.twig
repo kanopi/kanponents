@@ -38,17 +38,13 @@
  * @ingroup themeable
  */
 #}
+{% set paragraph_id = paragraph.id.value %}
 
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
-{% endif %}
+{{ attach_library('ucsf_dermatology_th/video_modal') }}
 
 {% set classes = [
-  'hero',
+  'video-modal',
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -56,46 +52,42 @@
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+
     {% block content %}
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
+      {% if content.field_heading | render %}
+        <a class="link-bg link-bg--video"
+           data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ content.field_heading | field_value }}</a>
+      {% else %}
+        <a class="link-bg link-bg--video"
+           data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ 'Watch the video'|t }}</a>
+      {% endif %}
 
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+      {# Hidden div that becomes the modal. #}
+      <div class="dialog" id="video-dialog-{{- paragraph_id -}}" aria-hidden="true">
+        <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+        <div role="dialog" class="dialog-content" aria-labelledby="video-dialog-title" aria-describedby="video-dialog-description">
 
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+          {# Modal close button. #}
+          <button
+            data-a11y-dialog-hide
+            class="dialog-close"
+            aria-label="Close this dialog window">
+          </button>
+
+          {# Main modal content. #}
+          {% if content.field_heading | render %}
+            <h2 class="h4">{{ content.field_heading | field_value }}</h2>
+          {% else %}
+            <h2 class="h4"> {{ 'Watch the video'|t }}</h2>
+          {% endif %}
+
+          <div id="video-dialog-description-{{- paragraph_id -}}">
+            {{ content.field_media | field_value }}
           </div>
-
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
-
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
+      {# // End hidden div. #}
     {% endblock %}
   </div>
 {% endblock paragraph %}

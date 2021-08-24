@@ -39,63 +39,69 @@
  */
 #}
 
-{{ attach_library('ucsf_dermatology_th/hero') }}
-
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
+{% if is_scs_view | render %}
+  {{ attach_library('ucsf_dermatology_th/scs_teaser') }}
 {% endif %}
 
+{# Check for top padding remove #}
+{% if content.field_remove_top_padding[0]["#markup"] == 1 %}
+  {% set remove_top_padding = 'remove-top-padding' %}
+{% endif %}
+
+{# Set the background color. #}
+{% if content.field_background_color | render %}
+  {% set bg = 'filtered-list--bg-' ~ content.field_background_color[0]["#markup"] %}
+  {# Class for any background so we can add padding. #}
+  {% set has_bg = 'has-bg' %}
+{% endif %}
+
+{{ attach_library('ucsf_dermatology_th/filtered_list') }}
+
 {% set classes = [
-  'hero',
+  has_bg,
+  remove_top_padding,
+  bg | clean_class,
+  'filtered-list',
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+
+  {# Set the edge to edge class. #}
+  {% if content.field_background_color | render %}
+    <div class="filtered-list__full-width-bg">
+  {% endif %}
+
+<div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
-
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
+    {% if ( content.field_overline | render) or ( content.field_heading | render) %}
+      <div class="filtered-list__header">
+        {% if content.field_overline | render %}
+          <div class="filtered-list__overline">
+            <p class="overline">{{ content.field_overline | field_value }}</p>
           </div>
+        {% endif %}
 
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
-
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
-            </div>
+        {% if content.field_heading | render %}
+          <div class="filtered-list__title">
+            <h2>{{ content.field_heading | field_value }}</h2>
           </div>
-
-        </div>
+        {% endif %}
       </div>
-    {% endblock %}
+    {% endif %}
+
+    <div class="filtered-list__view">
+      {{ content.field_views }}
+    </div>
+
+    {% if content.field_background_color | render %}
+  </div>
+  {% endif %}
+
+{% endblock %}
   </div>
 {% endblock paragraph %}

@@ -1,12 +1,14 @@
+uuid: e80a900a-39c8-4fe3-818c-c91054cb1662
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
+    - group
     - paragraphs
-id: paragraph.kan_field_person
-field_name: kan_field_person
-entity_type: paragraph
+id: group.field_components
+field_name: field_components
+entity_type: group
 type: entity_reference_revisions
 settings:
   target_type: paragraph

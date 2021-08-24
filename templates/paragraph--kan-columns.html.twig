@@ -38,64 +38,74 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('ucsf_dermatology_th/columns') }}
 
-{{ attach_library('ucsf_dermatology_th/hero') }}
+{% if content.field_vert_alignment | render %}
+  {% set vert_align = 'text-vert-align--' ~ content.field_vert_alignment[0]["#markup"] %}
+{% endif %}
 
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
-  {% set bottom_padding = 'bottom-padding-remove' %}
+{# Set the background offset. #}
+{% if content.field_background_offset | render %}
+  {% set offset = 'has-offset' %}
+  {% set cols_offset = 'columns--offset-' ~ content.field_background_offset[0]["#markup"] %}
+{% endif %}
+
+{# Check for top padding remove #}
+{% if content.field_remove_top_padding[0]["#markup"] == 1 %}
+  {% set remove_top_padding = 'remove-top-padding' %}
+{% endif %}
+
+{# Set the background color. #}
+{% if content.field_background_color | render %}
+  {% set bg = 'columns--' ~ content.field_background_color[0]["#markup"] %}
+  {# Class for any background so we can add padding. #}
+  {% set has_bg = 'has-bg' %}
+
+  {% if content.field_background_color[0]["#markup"] != 'background-gray' %}
+    {# If not gray, add a general class. #}
+    {% set has_dark_bg = 'has-dark-bg' %}
+  {% endif %}
+
+{% endif %}
+
+{# Set the column style. #}
+{% if content.field_column_style | render %}
+  {% set cols_layout = 'columns--layout-' ~ content.field_column_style[0]["#markup"] %}
 {% endif %}
 
 {% set classes = [
-  'hero',
+  'columns',
+  offset,
+  cols_offset,
+  vert_align | clean_class,
+  has_bg,
+  has_dark_bg,
+  remove_top_padding,
+  bg | clean_class,
+  cols_layout | clean_class,
   'paragraph',
-  bottom_padding,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
 {% block paragraph %}
+
+  {# Set the edge to edge class. #}
+  {% if content.field_full_width[0]["#markup"] == 1 %}
+    <div class="columns__full-width">
+  {% endif %}
+
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-
-      <div class="hero__wrap">
-        <div class="hero__wrap-inner">
-
-          <div class="hero__media">
-            {% if is_media_image | render %}
-              <div class="hero__background-image">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-
-            {% if is_media_remote_video | render %}
-              <div class="hero__background-video">
-                {{ content.field_background | field_value }}
-              </div>
-            {% endif %}
-          </div>
-
-          <div class="hero__title">
-            <div class="hero__title-wrap">
-              <div class="hero__title-inner">
-                {#
-                h1 tag which supercedes main page title if there is a hero
-                -- See "has_hero"
-                #}
-                <h1>{{ content.field_heading | field_value }}</h1>
-
-                {% if content.field_text | render %}
-                  <div class="hero__text">
-                    {{ content.field_text | field_value }}
-                  </div>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <div class="columns__wrap">
+        {{ content.field_columns }}
       </div>
     {% endblock %}
   </div>
+
+  {% if content.field_full_width[0]["#markup"] == 1 %}
+    </div>
+  {% endif %}
+
 {% endblock paragraph %}

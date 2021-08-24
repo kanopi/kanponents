@@ -1,4 +1,4 @@
-bp-callout:
+kanponents:
   css:
     component:
-      css/bp-columns.min.css: { preprocess: false, minified: true }
+      # css/bp-columns.min.css: { preprocess: false, minified: true }
