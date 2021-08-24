@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_accordion_item
+    - paragraphs.paragraphs_type.kan_accordion
+    - paragraphs.paragraphs_type.kan_accordion_item
+  module:
+    - entity_reference_revisions
+id: paragraph.kan_accordion.kan_field_accordion_item
+field_name: kan_field_accordion_item
+entity_type: paragraph
+bundle: kan_accordion
+label: 'Accordion Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      kan_accordion_item: kan_accordion_item
+    target_bundles_drag_drop:
+      kan_accordion:
+        weight: 5
+        enabled: false
+      kan_accordion_item:
+        enabled: true
+        weight: 6
+      kan_hero:
+        weight: 7
+        enabled: false
+      kan_text:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

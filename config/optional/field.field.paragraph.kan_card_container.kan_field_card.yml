@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_card
+    - paragraphs.paragraphs_type.kan_card
+    - paragraphs.paragraphs_type.kan_card_container
+  module:
+    - entity_reference_revisions
+id: paragraph.kan_card_container.kan_field_card
+field_name: kan_field_card
+entity_type: paragraph
+bundle: kan_card_container
+label: Card
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      kan_card: kan_card
+    target_bundles_drag_drop:
+      kan_accordion:
+        weight: 7
+        enabled: false
+      kan_accordion_item:
+        weight: 8
+        enabled: false
+      kan_card:
+        enabled: true
+        weight: 9
+      kan_card_container:
+        weight: 10
+        enabled: false
+      kan_hero:
+        weight: 11
+        enabled: false
+      kan_text:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

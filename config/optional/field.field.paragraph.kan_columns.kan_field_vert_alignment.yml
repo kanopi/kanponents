@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_vert_alignment
+    - paragraphs.paragraphs_type.kan_columns
+  module:
+    - options
+id: paragraph.kan_columns.kan_field_vert_alignment
+field_name: kan_field_vert_alignment
+entity_type: paragraph
+bundle: kan_columns
+label: 'Columns Vertical Alignment'
+description: 'Note, this setting is only if you have an image and text side by side. This will position the text area accordingly. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

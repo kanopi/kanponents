@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_remove_top_padding
+    - paragraphs.paragraphs_type.kan_filtered_list
+id: paragraph.kan_filtered_list.kan_field_remove_top_padding
+field_name: kan_field_remove_top_padding
+entity_type: paragraph
+bundle: kan_filtered_list
+label: 'Remove top padding'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

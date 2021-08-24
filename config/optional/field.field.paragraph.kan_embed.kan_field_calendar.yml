@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_calendar
+    - paragraphs.paragraphs_type.kan_embed
+id: paragraph.kan_embed.field_calendar
+field_name: kan_field_calendar
+entity_type: paragraph
+bundle: kan_embed
+label: Calendar
+description: 'Check this box if the embed is a UCSF events calendar from https://calendar.ucsf.edu/help/widget'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

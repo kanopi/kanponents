@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_hero_overlay
+    - paragraphs.paragraphs_type.kan_hero
+id: paragraph.kan_hero.kan_field_hero_overlay
+field_name: kan_field_hero_overlay
+entity_type: paragraph
+bundle: kan_hero
+label: 'Hero Overlay'
+description: 'Check this box to create an overlay for the hero. This works best when there is less contrast between the image and text.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

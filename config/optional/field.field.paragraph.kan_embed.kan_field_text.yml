@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_text
+    - paragraphs.paragraphs_type.kan_embed
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    raw_html: raw_html
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.kan_embed.kan_field_text
+field_name: kan_field_text
+entity_type: paragraph
+bundle: kan_embed
+label: 'HTML / JS Embed'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

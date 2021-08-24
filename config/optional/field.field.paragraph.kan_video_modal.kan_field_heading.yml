@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_heading
+    - paragraphs.paragraphs_type.kan_video_modal
+id: paragraph.kan_video_modal.kan_field_heading
+field_name: kan_field_heading
+entity_type: paragraph
+bundle: kan_video_modal
+label: 'Link title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

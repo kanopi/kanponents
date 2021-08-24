@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_background_color
+    - paragraphs.paragraphs_type.kan_text
+  module:
+    - options
+id: paragraph.kan_text.kan_field_background_color
+field_name: kan_field_background_color
+entity_type: paragraph
+bundle: kan_text
+label: 'Background Color'
+description: 'Choose a background color for the text field. (defaults to white if none chosen)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

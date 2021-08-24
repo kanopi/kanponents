@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_views
+    - paragraphs.paragraphs_type.kan_filtered_list
+  module:
+    - viewfield
+id: paragraph.kan_filtered_list.kan_field_views
+field_name: kan_field_views
+entity_type: paragraph
+bundle: kan_filtered_list
+label: 'Filtered List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: false
+  allowed_views:
+    content: '0'
+    block_content: '0'
+    files: '0'
+    hero: '0'
+    media: '0'
+    media_library: '0'
+    user_admin_people: '0'
+    redirect: '0'
+    redirect_404: '0'
+    taxonomy_term: '0'
+    teaser: '0'
+    watchdog: '0'
+  allowed_display_types:
+    block: block
+    feed: '0'
+    default: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

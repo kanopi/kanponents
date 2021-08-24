@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_quicklink_items
+    - paragraphs.paragraphs_type.kan_quicklinks
+    - paragraphs.paragraphs_type.kan_quicklinks_item
+  module:
+    - entity_reference_revisions
+id: paragraph.kan_quicklinks.kan_field_quicklink_items
+field_name: kan_field_quicklink_items
+entity_type: paragraph
+bundle: kan_quicklinks
+label: 'Quicklink Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      kan_quicklinks_item: kan_quicklinks_item
+    target_bundles_drag_drop:
+      kan_accordion:
+        weight: 9
+        enabled: false
+      kan_accordion_item:
+        weight: 10
+        enabled: false
+      kan_card:
+        weight: 11
+        enabled: false
+      kan_card_container:
+        weight: 12
+        enabled: false
+      kan_hero:
+        weight: 13
+        enabled: false
+      kan_quicklinks:
+        weight: 14
+        enabled: false
+      kan_quicklinks_item:
+        enabled: true
+        weight: 15
+      kan_text:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions
