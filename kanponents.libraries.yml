@@ -1,4 +1,88 @@
-kanponents:
+kan_hero:
   css:
     component:
-      # css/bp-columns.min.css: { preprocess: false, minified: true }
+      css/hero.css: { media: screen }
+
+kan_tabs:
+  css:
+    component:
+      css/tabs.css: { media: screen }
+  js:
+    dist/vendor/js/van11y-accessible-tab-panel-aria.js: { defer: true, async: true }
+  dependencies:
+    - ucsf_dermatology_th/global
+
+kan_accordion:
+  css:
+    component:
+      css/accordion.css: { media: screen }
+  js:
+    js/van11y-accessible-accordion-aria.js: { defer: true, async: true }
+  dependencies:
+    - ucsf_dermatology_th/global
+
+kan_text_block:
+  css:
+    component:
+      css/text-block.css: { media: screen }
+
+kan_video_bg:
+  js:
+    js/jquery.mb.YTPlayer.min.js: { minified: true, async: true, defer: true}
+    js/video.js: { }
+
+kan_cards:
+  css:
+    component:
+      css/cards.css: { media: screen }
+
+kan_cards_carousel:
+  css:
+    component:
+      css/tiny-slider.css: { media: screen }
+  js:
+    js/tiny-slider.js: { }
+    js/cards-carousel.js: { }
+
+kan_linksbar:
+  css:
+    component:
+      css/linksbar.css: { media: screen }
+
+kan_quicklinks:
+  css:
+    component:
+      css/quicklinks.css: { media: screen }
+
+kan_numbered_list:
+  css:
+    component:
+      css/numlist.css: { media: screen }
+
+kan_columns:
+  css:
+    component:
+      css/columns.css: { media: screen }
+
+kan_media:
+  css:
+    component:
+      css/media.css: { media: screen }
+
+kan_filtered_list:
+  css:
+    component:
+      css/filtered-list.css: { media: screen }
+
+kan_video_modal:
+  css:
+    component:
+      css/video-modal.css: { media: screen }
+  js:
+    js/a11y-dialog.js: { }
+    js/video-modal.js: { async: true }
+
+kan_file_link:
+  js:
+    js/file-link.js: { }
+    

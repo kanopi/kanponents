@@ -38,10 +38,10 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('ucsf_dermatology_th/cards') }}
+{{ attach_library('kanponents/kan_cards') }}
 
 {% if is_carousel | render %}
-  {{ attach_library('ucsf_dermatology_th/cards_carousel') }}
+  {{ attach_library('kanponents/kan_cards_carousel') }}
   {% set carousel_class = 'carousel-wrap' %}
   {% set card_modifier = 'card--carousel-list' %}
 {% else %}

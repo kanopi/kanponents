@@ -5,7 +5,14 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 package: Paragraphs
 dependencies:
-  - paragraphs
+  - paragraphs:paragraphs
+  - field_group:field_group
+  - block_field:block_field
+  - link_attributes:link_attributes
+  - allowed_formats:allowed_formats
+  - maxlength:maxlength
+  - viewfield:viewfield
+  - entity_reference_revisions:entity_reference_revisions
 
 # Information added by Drupal.org packaging script on 2020-10-08
 version: '8.x.0'
