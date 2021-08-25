@@ -1,4 +1,4 @@
-# Bootstrap Paragraphs Callout
+# Kanoponents
 
 CONTENTS OF THIS FILE
 ---------------------
@@ -13,14 +13,14 @@ CONTENTS OF THIS FILE
 INTRODUCTION
 ------------
 
-Drupal 8 module that creates a Flexible Columns Paragraphs bundle.
+Library of custom paragraph types for UCSF
 
 
 REQUIREMENTS
 ------------
 
   * [Paragraphs](https://www.drupal.org/project/paragraphs)
-  * [Bootstrap Paragraphs](https://www.drupal.org/project/bootstrap_paragraphs)
+  * 
 
 
 INSTALLATION
@@ -28,7 +28,7 @@ INSTALLATION
 
   * Install the module as you normally would.
   * Verify installation by visiting /admin/structure/paragraphs_type and
-  verifying your new Paragraph bundle is in the list.
+  verifying your new Paragraph bundles are in the list.
 
 
 CONFIGURATION
