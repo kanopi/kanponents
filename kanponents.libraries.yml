@@ -9,8 +9,6 @@ kan_tabs:
       css/tabs.css: { media: screen }
   js:
     dist/vendor/js/van11y-accessible-tab-panel-aria.js: { defer: true, async: true }
-  dependencies:
-    - ucsf_dermatology_th/global
 
 kan_accordion:
   css:
@@ -18,8 +16,6 @@ kan_accordion:
       css/accordion.css: { media: screen }
   js:
     js/van11y-accessible-accordion-aria.js: { defer: true, async: true }
-  dependencies:
-    - ucsf_dermatology_th/global
 
 kan_text_block:
   css:
