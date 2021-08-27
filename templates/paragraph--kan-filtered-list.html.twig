@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -44,13 +44,13 @@
 {% endif %}
 
 {# Check for top padding remove #}
-{% if content.field_remove_top_padding[0]["#markup"] == 1 %}
+{% if content.kan_field_remove_top_padding[0]["#markup"] == 1 %}
   {% set remove_top_padding = 'remove-top-padding' %}
 {% endif %}
 
 {# Set the background color. #}
-{% if content.field_background_color | render %}
-  {% set bg = 'filtered-list--bg-' ~ content.field_background_color[0]["#markup"] %}
+{% if content.kan_field_background_color | render %}
+  {% set bg = 'filtered-list--bg-' ~ content.kan_field_background_color[0]["#markup"] %}
   {# Class for any background so we can add padding. #}
   {% set has_bg = 'has-bg' %}
 {% endif %}
@@ -71,34 +71,34 @@
 {% block paragraph %}
 
   {# Set the edge to edge class. #}
-  {% if content.field_background_color | render %}
+  {% if content.kan_field_background_color | render %}
     <div class="filtered-list__full-width-bg">
   {% endif %}
 
 <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-    {% if ( content.field_overline | render) or ( content.field_heading | render) %}
+    {% if ( content.kan_field_overline | render) or ( content.kan_field_heading | render) %}
       <div class="filtered-list__header">
-        {% if content.field_overline | render %}
+        {% if content.kan_field_overline | render %}
           <div class="filtered-list__overline">
-            <p class="overline">{{ content.field_overline | field_value }}</p>
+            <p class="overline">{{ content.kan_field_overline | field_value }}</p>
           </div>
         {% endif %}
 
-        {% if content.field_heading | render %}
+        {% if content.kan_field_heading | render %}
           <div class="filtered-list__title">
-            <h2>{{ content.field_heading | field_value }}</h2>
+            <h2>{{ content.kan_field_heading | field_value }}</h2>
           </div>
         {% endif %}
       </div>
     {% endif %}
 
     <div class="filtered-list__view">
-      {{ content.field_views }}
+      {{ content.kan_field_views }}
     </div>
 
-    {% if content.field_background_color | render %}
+    {% if content.kan_field_background_color | render %}
   </div>
   {% endif %}
 

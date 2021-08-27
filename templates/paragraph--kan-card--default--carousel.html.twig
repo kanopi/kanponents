@@ -1,7 +1,7 @@
-{% extends "paragraph--card--default.html.twig" %}
+{% extends "paragraph--kan-card--default.html.twig" %}
 
    {% block media %}
-     {% if content.field_image | render %}
+     {% if content.kan_field_image | render %}
        <div class="card__media">
          <img class="tns-lazy" src="data:image/gif;base64,R0lGODlhAQABAPAAAMzMzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
               data-src="{{ carousel_img }}" width="{{ img_width }}" height="{{ img_height }}" {{ img_alt }}>

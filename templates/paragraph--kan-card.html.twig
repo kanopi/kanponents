@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -40,8 +40,8 @@
 #}
 
 {# if link target is not empty, set a variable. #}
-{% if content.field_link.0["#url"].getOptions().attributes .target | render %}
-  {% set target = 'rel=noopener target = _' ~ content.field_link.0["#url"].getOptions().attributes .target %}
+{% if content.kan_field_link.0["#url"].getOptions().attributes .target | render %}
+  {% set target = 'rel=noopener target = _' ~ content.kan_field_link.0["#url"].getOptions().attributes .target %}
 {% endif %}
 
 {% set classes = [
@@ -59,29 +59,29 @@
       <div class="card__item-inner">
 
         {% block media %}
-        {% if content.field_image | render %}
+        {% if content.kan_field_image | render %}
           <div class="card__media">
-            {{ content.field_image | field_value }}
+            {{ content.kan_field_image | field_value }}
           </div>
         {% endif %}
         {% endblock %}
 
         <div class="card__content">
 
-          {% if content.field_heading | render %}
+          {% if content.kan_field_heading | render %}
             <div class="card__title">
-              <h2>{{ content.field_heading | field_value }}</h2>
+              <h2>{{ content.kan_field_heading | field_value }}</h2>
             </div>
           {% endif %}
 
-          {% if content.field_link | render %}
+          {% if content.kan_field_link | render %}
             <div class="card__link">
               <a class="btn btn-hollow"
-                 href="{{ content.field_link.0["#url_title"] }}"
+                 href="{{ content.kan_field_link.0["#url_title"] }}"
                 {{ target }}
                  role="button"
-                 title="{{ 'Learn more about'|t }} {{ content.field_heading | field_value }}"
-                 aria-label="{{ 'Learn more about'|t }} {{ content.field_heading | field_value }}">
+                 title="{{ 'Learn more about'|t }} {{ content.kan_field_heading | field_value }}"
+                 aria-label="{{ 'Learn more about'|t }} {{ content.kan_field_heading | field_value }}">
                 {{ 'Learn More'|t }}
               </a>
             </div>

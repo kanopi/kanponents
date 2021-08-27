@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -40,28 +40,28 @@
 #}
 {{ attach_library('kanponents/kan_columns') }}
 
-{% if content.field_vert_alignment | render %}
-  {% set vert_align = 'text-vert-align--' ~ content.field_vert_alignment[0]["#markup"] %}
+{% if content.kan_field_vert_alignment | render %}
+  {% set vert_align = 'text-vert-align--' ~ content.kan_field_vert_alignment[0]["#markup"] %}
 {% endif %}
 
 {# Set the background offset. #}
-{% if content.field_background_offset | render %}
+{% if content.kan_field_background_offset | render %}
   {% set offset = 'has-offset' %}
-  {% set cols_offset = 'columns--offset-' ~ content.field_background_offset[0]["#markup"] %}
+  {% set cols_offset = 'columns--offset-' ~ content.kan_field_background_offset[0]["#markup"] %}
 {% endif %}
 
 {# Check for top padding remove #}
-{% if content.field_remove_top_padding[0]["#markup"] == 1 %}
+{% if content.kan_field_remove_top_padding[0]["#markup"] == 1 %}
   {% set remove_top_padding = 'remove-top-padding' %}
 {% endif %}
 
 {# Set the background color. #}
-{% if content.field_background_color | render %}
-  {% set bg = 'columns--' ~ content.field_background_color[0]["#markup"] %}
+{% if content.kan_field_background_color | render %}
+  {% set bg = 'columns--' ~ content.kan_field_background_color[0]["#markup"] %}
   {# Class for any background so we can add padding. #}
   {% set has_bg = 'has-bg' %}
 
-  {% if content.field_background_color[0]["#markup"] != 'background-gray' %}
+  {% if content.kan_field_background_color[0]["#markup"] != 'background-gray' %}
     {# If not gray, add a general class. #}
     {% set has_dark_bg = 'has-dark-bg' %}
   {% endif %}
@@ -69,8 +69,8 @@
 {% endif %}
 
 {# Set the column style. #}
-{% if content.field_column_style | render %}
-  {% set cols_layout = 'columns--layout-' ~ content.field_column_style[0]["#markup"] %}
+{% if content.kan_field_column_style | render %}
+  {% set cols_layout = 'columns--layout-' ~ content.kan_field_column_style[0]["#markup"] %}
 {% endif %}
 
 {% set classes = [
@@ -92,19 +92,19 @@
 {% block paragraph %}
 
   {# Set the edge to edge class. #}
-  {% if content.field_full_width[0]["#markup"] == 1 %}
+  {% if content.kan_field_full_width[0]["#markup"] == 1 %}
     <div class="columns__full-width">
   {% endif %}
 
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="columns__wrap">
-        {{ content.field_columns }}
+        {{ content.kan_field_columns }}
       </div>
     {% endblock %}
   </div>
 
-  {% if content.field_full_width[0]["#markup"] == 1 %}
+  {% if content.kan_field_full_width[0]["#markup"] == 1 %}
     </div>
   {% endif %}
 

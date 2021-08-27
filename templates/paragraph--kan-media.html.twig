@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -40,18 +40,18 @@
 #}
 
 {# Check for top padding remove #}
-{% if content.field_full_width_media[0]["#markup"] == 1 %}
+{% if content.kan_field_full_width_media[0]["#markup"] == 1 %}
   {% set full_width_media = 'c-media--full-width' %}
 {% endif %}
 
 {# The offset if it exists. #}
-{% if content.field_image_offset_color | render %}
+{% if content.kan_field_image_offset_color | render %}
   {% set offset_color = 'offset-color' %}
-  {% set offset = 'offset-color--' ~ content.field_image_offset_color.0["#markup"] %}
+  {% set offset = 'offset-color--' ~ content.kan_field_image_offset_color.0["#markup"] %}
 {% endif %}
 
 {# The media bundle. #}
-{% set bundle = content.field_media.0["#media"].bundle.getString() %}
+{% set bundle = content.kan_field_media.0["#media"].bundle.getString() %}
 
 {{ attach_library('kanponents/kan_media') }}
 
@@ -74,18 +74,18 @@
       {% if ( bundle == 'image' ) or ( bundle == 'remote_video' ) %}
 
         <figure class="c-media__image-video">
-          {{ content.field_media | field_value }}
+          {{ content.kan_field_media | field_value }}
 
-          {% if content.field_caption | render %}
+          {% if content.kan_field_caption | render %}
             <figcaption class="c-media__caption">
-              {{ content.field_caption | field_value }}
+              {{ content.kan_field_caption | field_value }}
             </figcaption>
           {% endif %}
         </figure>
 
       {% else %}
         {# Docuemnts et al. #}
-        {{ content.field_media | field_value }}
+        {{ content.kan_field_media | field_value }}
       {% endif %}
 
     {% endblock %}

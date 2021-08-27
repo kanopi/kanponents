@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -54,7 +54,7 @@
       <div class="links-bar__container">
         <div class="links-bar__wrap">
 
-          {% for key, item in content.field_linksbar_item if key|first != '#' %}
+          {% for key, item in content.kan_field_linksbar_item if key|first != '#' %}
             <div class="links-bar__item links-bar__item--index-{{- loop.index -}}">
 
               {% if item['#paragraph'].field_link.0.options.attributes.target | render %}

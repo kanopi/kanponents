@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -55,9 +55,9 @@
 
     {% block content %}
 
-      {% if content.field_heading | render %}
+      {% if content.kan_field_heading | render %}
         <a class="link-bg link-bg--video"
-           data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ content.field_heading | field_value }}</a>
+           data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ content.kan_field_heading | field_value }}</a>
       {% else %}
         <a class="link-bg link-bg--video"
            data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ 'Watch the video'|t }}</a>
@@ -76,14 +76,14 @@
           </button>
 
           {# Main modal content. #}
-          {% if content.field_heading | render %}
-            <h2 class="h4">{{ content.field_heading | field_value }}</h2>
+          {% if content.kan_field_heading | render %}
+            <h2 class="h4">{{ content.kan_field_heading | field_value }}</h2>
           {% else %}
             <h2 class="h4"> {{ 'Watch the video'|t }}</h2>
           {% endif %}
 
           <div id="video-dialog-description-{{- paragraph_id -}}">
-            {{ content.field_media | field_value }}
+            {{ content.kan_field_media | field_value }}
           </div>
         </div>
       </div>

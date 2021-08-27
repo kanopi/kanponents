@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -53,21 +53,21 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-      {% if content.field_overline | render %}
+      {% if content.kan_field_overline | render %}
         <div class="numbered-list__overline">
-          <p class="overline">{{ content.field_overline | field_value }}</p>
+          <p class="overline">{{ content.kan_field_overline | field_value }}</p>
         </div>
       {% endif %}
 
-      {% if content.field_heading | render %}
+      {% if content.kan_field_heading | render %}
         <div class="numbered-list__title">
-          <h2>{{ content.field_heading | field_value }}</h2>
+          <h2>{{ content.kan_field_heading | field_value }}</h2>
         </div>
       {% endif %}
 
-      {% if content.field_numbered_list_item | render %}
+      {% if content.kan_field_numbered_list_item | render %}
         <ol class="numbered-list__items">
-          {{ content.field_numbered_list_item | field_value }}
+          {{ content.kan_field_numbered_list_item | field_value }}
         </ol>
       {% endif %}
 

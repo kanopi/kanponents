@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -66,23 +66,23 @@
 
       <div class="card__header">
 
-        {% if content.field_overline | render %}
+        {% if content.kan_field_overline | render %}
           <div class="card__overline">
-            <p class="overline">{{ content.field_overline | field_value }}</p>
+            <p class="overline">{{ content.kan_field_overline | field_value }}</p>
           </div>
         {% endif %}
 
-        {% if content.field_heading | render %}
+        {% if content.kan_field_heading | render %}
           <div class="card__main-title">
-            <h2>{{ content.field_heading | field_value }}</h2>
+            <h2>{{ content.kan_field_heading | field_value }}</h2>
           </div>
         {% endif %}
 
       </div>
 
-      {% if content.field_card | render %}
+      {% if content.kan_field_card | render %}
         <div class="card__wrap {{ carousel_class }}">
-          {{ content.field_card | field_value }}
+          {{ content.kan_field_card | field_value }}
         </div>
 
       {% endif %}

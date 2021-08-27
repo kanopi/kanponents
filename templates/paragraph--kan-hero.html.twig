@@ -14,7 +14,7 @@
  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
  *   and methods for the paragraph object.
  * - content: All paragraph items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
+ *   or print a subset such as {{ content.kan_field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
  *   of a given child element.
  * - attributes: HTML attributes for the containing element.
@@ -41,7 +41,7 @@
 
 {{ attach_library('kanponents/kan_hero') }}
 
-{% if content.field_remove_bottom_padding[0]["#markup"] == 1 %}
+{% if content.kan_field_remove_bottom_padding[0]["#markup"] == 1 %}
   {% set bottom_padding = 'bottom-padding-remove' %}
 {% endif %}
 
@@ -64,13 +64,13 @@
           <div class="hero__media">
             {% if is_media_image | render %}
               <div class="hero__background-image">
-                {{ content.field_background | field_value }}
+                {{ content.kan_field_background | field_value }}
               </div>
             {% endif %}
 
             {% if is_media_remote_video | render %}
               <div class="hero__background-video">
-                {{ content.field_background | field_value }}
+                {{ content.kan_field_background | field_value }}
               </div>
             {% endif %}
           </div>
@@ -82,11 +82,11 @@
                 h1 tag which supercedes main page title if there is a hero
                 -- See "has_hero"
                 #}
-                <h1>{{ content.field_heading | field_value }}</h1>
+                <h1>{{ content.kan_field_heading | field_value }}</h1>
 
-                {% if content.field_text | render %}
+                {% if content.kan_field_text | render %}
                   <div class="hero__text">
-                    {{ content.field_text | field_value }}
+                    {{ content.kan_field_text | field_value }}
                   </div>
                 {% endif %}
 

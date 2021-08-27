@@ -1,4 +1,4 @@
-# Kanoponents
+# Kanponents
 
 CONTENTS OF THIS FILE
 ---------------------
@@ -20,7 +20,13 @@ REQUIREMENTS
 ------------
 
   * [Paragraphs](https://www.drupal.org/project/paragraphs)
-  * 
+  * [Twig Field Value](https://www.drupal.org/project/paragraphs)
+  * [Field Group](https://www.drupal.org/project/field_group)
+  * [Link Attributes](https://www.drupal.org/project/link_attributes)
+  * [Allowed Formats](https://www.drupal.org/project/allowed_formats)
+  * [Max Length](https://www.drupal.org/project/maxlength)
+  * [View Field](https://www.drupal.org/project/viewfield)
+  * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
 
 
 INSTALLATION
