@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.kan_field_heading
-    - field.field.paragraph.card.kan_field_image
-    - field.field.paragraph.card.kan_field_link
+    - field.field.paragraph.kan_card.kan_field_heading
+    - field.field.paragraph.kan_card.kan_field_image
+    - field.field.paragraph.kan_card.kan_field_link
     - paragraphs.paragraphs_type.kan_card
   module:
     - link

@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_container.kan_field_card
-    - field.field.paragraph.card_container.kan_field_heading
-    - field.field.paragraph.card_container.kan_field_overline
+    - field.field.paragraph.kan_card_container.kan_field_card
+    - field.field.paragraph.kan_card_container.kan_field_heading
+    - field.field.paragraph.kan_card_container.kan_field_overline
     - paragraphs.paragraphs_type.kan_card_container
   module:
     - entity_reference_revisions

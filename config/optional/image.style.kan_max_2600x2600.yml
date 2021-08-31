@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: kan_max_2600x2600
+label: kan_max_2600x2600
+effects:
+  e89fa02b-b1bd-4f95-be9f-c8534fac6c51:
+    uuid: e89fa02b-b1bd-4f95-be9f-c8534fac6c51
+    id: image_scale
+    weight: 1
+    data:
+      width: 2600
+      height: 2600
+      upscale: false

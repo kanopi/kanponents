@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.block.kan_field_block
+    - field.field.paragraph.kan_block.kan_field_block
     - paragraphs.paragraphs_type.kan_block
   module:
     - block_field

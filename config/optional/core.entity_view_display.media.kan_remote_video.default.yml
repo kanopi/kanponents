@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.kan_remote_video.kan_field_fallback_image
+    - field.field.media.kan_remote_video.kan_field_media_oembed_video
+    - media.type.kan_remote_video
+  module:
+    - media
+id: media.kan_remote_video.default
+targetEntityType: media
+bundle: kan_remote_video
+mode: default
+content:
+  kan_field_fallback_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  kan_field_media_oembed_video:
+    type: oembed
+    label: hidden
+    weight: 0
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

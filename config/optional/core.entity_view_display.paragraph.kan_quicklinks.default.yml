@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.quicklinks.kan_field_heading
-    - field.field.paragraph.quicklinks.kan_field_overline
-    - field.field.paragraph.quicklinks.kan_field_quicklink_items
+    - field.field.paragraph.kan_quicklinks.kan_field_heading
+    - field.field.paragraph.kan_quicklinks.kan_field_overline
+    - field.field.paragraph.kan_quicklinks.kan_field_quicklink_items
     - paragraphs.paragraphs_type.kan_quicklinks
   module:
     - entity_reference_revisions

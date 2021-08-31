@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.media.kan_field_caption
-    - field.field.paragraph.media.kan_field_full_width_media
-    - field.field.paragraph.media.kan_field_image_offset_color
-    - field.field.paragraph.media.kan_field_media
+    - field.field.paragraph.kan_media.kan_field_caption
+    - field.field.paragraph.kan_media.kan_field_full_width_media
+    - field.field.paragraph.kan_media.kan_field_image_offset_color
+    - field.field.paragraph.kan_media.kan_field_media
     - paragraphs.paragraphs_type.kan_media
   module:
     - media_library

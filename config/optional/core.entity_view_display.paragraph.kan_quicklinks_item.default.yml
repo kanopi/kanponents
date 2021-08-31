@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.quicklinks_item.kan_field_heading
-    - field.field.paragraph.quicklinks_item.kan_field_link
-    - field.field.paragraph.quicklinks_item.kan_field_text
+    - field.field.paragraph.kan_quicklinks_item.kan_field_heading
+    - field.field.paragraph.kan_quicklinks_item.kan_field_link
+    - field.field.paragraph.kan_quicklinks_item.kan_field_text
     - paragraphs.paragraphs_type.kan_quicklinks_item
   module:
     - link

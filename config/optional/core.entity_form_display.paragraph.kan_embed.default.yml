@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.embed.kan_field_calendar
-    - field.field.paragraph.embed.kan_field_text
+    - field.field.paragraph.kan_embed.kan_field_calendar
+    - field.field.paragraph.kan_embed.kan_field_text
     - paragraphs.paragraphs_type.kan_embed
   module:
     - allowed_formats

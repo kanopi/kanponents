@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.columns.kan_field_background_color
-    - field.field.paragraph.columns.kan_field_background_offset
-    - field.field.paragraph.columns.kan_field_column_style
-    - field.field.paragraph.columns.kan_field_columns
-    - field.field.paragraph.columns.kan_field_full_width
-    - field.field.paragraph.columns.kan_field_remove_top_padding
-    - field.field.paragraph.columns.kan_field_vert_alignment
+    - field.field.paragraph.kan_columns.kan_field_background_color
+    - field.field.paragraph.kan_columns.kan_field_background_offset
+    - field.field.paragraph.kan_columns.kan_field_column_style
+    - field.field.paragraph.kan_columns.kan_field_columns
+    - field.field.paragraph.kan_columns.kan_field_full_width
+    - field.field.paragraph.kan_columns.kan_field_remove_top_padding
+    - field.field.paragraph.kan_columns.kan_field_vert_alignment
     - paragraphs.paragraphs_type.kan_columns
   module:
     - entity_reference_revisions

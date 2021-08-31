@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.text.kan_field_background_color
-    - field.field.paragraph.text.kan_field_heading
-    - field.field.paragraph.text.kan_field_overline
-    - field.field.paragraph.text.kan_field_text
-    - field.field.paragraph.text.kan_field_title_h1
+    - field.field.paragraph.kan_text.kan_field_background_color
+    - field.field.paragraph.kan_text.kan_field_heading
+    - field.field.paragraph.kan_text.kan_field_overline
+    - field.field.paragraph.kan_text.kan_field_text
+    - field.field.paragraph.kan_text.kan_field_title_h1
     - paragraphs.paragraphs_type.kan_text
   module:
     - field_group

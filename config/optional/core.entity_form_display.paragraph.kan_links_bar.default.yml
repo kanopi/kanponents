@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.links_bar.kan_field_linksbar_item
+    - field.field.paragraph.kan_links_bar.kan_field_linksbar_item
     - paragraphs.paragraphs_type.kan_links_bar
   module:
     - paragraphs

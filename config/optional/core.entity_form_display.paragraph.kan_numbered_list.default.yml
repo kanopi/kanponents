@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.numbered_list.kan_field_heading
-    - field.field.paragraph.numbered_list.kan_field_numbered_list_item
-    - field.field.paragraph.numbered_list.kan_field_overline
+    - field.field.paragraph.kan_numbered_list.kan_field_heading
+    - field.field.paragraph.kan_numbered_list.kan_field_numbered_list_item
+    - field.field.paragraph.kan_numbered_list.kan_field_overline
     - paragraphs.paragraphs_type.kan_numbered_list
   module:
     - paragraphs

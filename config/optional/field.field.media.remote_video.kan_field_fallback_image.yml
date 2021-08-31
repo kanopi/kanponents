@@ -2,16 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.kan_field_media
-    - media.type.kan_document
+    - field.storage.media.kan_field_fallback_image
     - media.type.kan_image
     - media.type.kan_remote_video
-    - paragraphs.paragraphs_type.kan_media
-id: paragraph.kan_media.field_media
-field_name: kan_field_media
-entity_type: paragraph
-bundle: kan_media
-label: Media
+id: media.remote_video.kan_field_fallback_image
+field_name: kan_field_fallback_image
+entity_type: media
+bundle: kan_remote_video
+label: 'Fallback Image'
 description: ''
 required: false
 translatable: false
@@ -21,11 +19,9 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      document: kan_document
-      image: kan_image
-      remote_video: kan_remote_video
+      image: image
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: ''
 field_type: entity_reference

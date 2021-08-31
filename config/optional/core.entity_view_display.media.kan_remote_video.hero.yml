@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.kan_media.hero
+    - field.field.media.kan_remote_video.kan_field_fallback_image
+    - field.field.media.kan_remote_video.kan_field_media_oembed_video
+    - media.type.kan_remote_video
+id: media.kan_remote_video.hero
+targetEntityType: media
+bundle: kan_remote_video
+mode: hero
+content:
+  kan_field_fallback_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+  kan_field_media_oembed_video:
+    type: string
+    label: hidden
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

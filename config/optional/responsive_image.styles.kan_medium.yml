@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.kan_max_650x650
+id: kan_medium
+label: Kanponents Medium
+image_style_mappings:
+  -
+    breakpoint_id: kanponents.wide
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+  -
+    breakpoint_id: kanponents.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+  -
+    breakpoint_id: kanponents.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+breakpoint_group: kanponents
+fallback_image_style: kan_max_650x650

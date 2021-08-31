@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.kan_document.kan_field_media_file
+    - media.type.kan_document
+  module:
+    - file
+id: media.kan_document.default
+targetEntityType: media
+bundle: kan_document
+mode: default
+content:
+  kan_field_media_file:
+    label: hidden
+    weight: 1
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  kan_name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

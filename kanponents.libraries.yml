@@ -1,41 +1,43 @@
 kan_hero:
   css:
     component:
-      css/hero.css: { media: screen }
+      css/hero.css: { preprocess: false, media: screen }
 
 kan_tabs:
   css:
     component:
-      css/tabs.css: { media: screen }
+      css/tabs.css: { preprocess: false, media: screen }
   js:
-    dist/vendor/js/van11y-accessible-tab-panel-aria.js: { defer: true, async: true }
+    js/van11y-accessible-tab-panel-aria.js: { defer: true, async: true }
 
 kan_accordion:
   css:
     component:
-      css/accordion.css: { media: screen }
+      css/accordion.css: { preprocess: false, media: screen }
   js:
     js/van11y-accessible-accordion-aria.js: { defer: true, async: true }
 
 kan_text_block:
   css:
     component:
-      css/text-block.css: { media: screen }
+      css/text-block.css: { preprocess: false, media: screen }
 
 kan_video_bg:
   js:
     js/jquery.mb.YTPlayer.min.js: { minified: true, async: true, defer: true}
     js/video.js: { }
+  dependencies:
+    - core/jquery
 
 kan_cards:
   css:
     component:
-      css/cards.css: { media: screen }
+      css/cards.css: { preprocess: false, media: screen }
 
 kan_cards_carousel:
   css:
     component:
-      css/tiny-slider.css: { media: screen }
+      css/tiny-slider.css: { preprocess: false, media: screen }
   js:
     js/tiny-slider.js: { }
     js/cards-carousel.js: { }
@@ -43,37 +45,37 @@ kan_cards_carousel:
 kan_linksbar:
   css:
     component:
-      css/linksbar.css: { media: screen }
+      css/linksbar.css: { preprocess: false, media: screen }
 
 kan_quicklinks:
   css:
     component:
-      css/quicklinks.css: { media: screen }
+      css/quicklinks.css: { preprocess: false, media: screen }
 
 kan_numbered_list:
   css:
     component:
-      css/numlist.css: { media: screen }
+      css/numlist.css: { preprocess: false, media: screen }
 
 kan_columns:
   css:
     component:
-      css/columns.css: { media: screen }
+      css/columns.css: { preprocess: false, media: screen }
 
 kan_media:
   css:
     component:
-      css/media.css: { media: screen }
+      css/media.css: { preprocess: false, media: screen }
 
 kan_filtered_list:
   css:
     component:
-      css/filtered-list.css: { media: screen }
+      css/filtered-list.css: { preprocess: false, media: screen }
 
 kan_video_modal:
   css:
     component:
-      css/video-modal.css: { media: screen }
+      css/video-modal.css: { preprocess: false, media: screen }
   js:
     js/a11y-dialog.js: { }
     js/video-modal.js: { async: true }

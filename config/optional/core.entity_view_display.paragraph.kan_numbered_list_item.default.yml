@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.numbered_list_item.kan_field_heading
-    - field.field.paragraph.numbered_list_item.kan_field_text
+    - field.field.paragraph.kan_numbered_list_item.kan_field_heading
+    - field.field.paragraph.kan_numbered_list_item.kan_field_text
     - paragraphs.paragraphs_type.kan_numbered_list_item
   module:
     - text
@@ -12,7 +12,7 @@ targetEntityType: paragraph
 bundle: kan_numbered_list_item
 mode: default
 content:
-  field_heading:
+  kan_field_heading:
     weight: 0
     label: hidden
     settings:
@@ -20,7 +20,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_text:
+  kan_field_text:
     weight: 1
     label: hidden
     settings: {  }

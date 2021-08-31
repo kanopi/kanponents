@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card_container.kan_field_card
-    - field.field.paragraph.card_container.kan_field_heading
-    - field.field.paragraph.card_container.kan_field_overline
+    - field.field.paragraph.kan_card_container.kan_field_card
+    - field.field.paragraph.kan_card_container.kan_field_heading
+    - field.field.paragraph.kan_card_container.kan_field_overline
     - paragraphs.paragraphs_type.kan_card_container
   module:
     - field_group
@@ -58,7 +58,7 @@ targetEntityType: paragraph
 bundle: kan_card_container
 mode: default
 content:
-  kan_field_card:
+  field_card:
     type: paragraphs
     weight: 5
     settings:
@@ -77,7 +77,7 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
     region: content
-  kan_field_heading:
+  field_heading:
     weight: 4
     settings:
       size: 60
@@ -85,7 +85,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  kan_field_overline:
+  field_overline:
     weight: 3
     settings:
       size: 60

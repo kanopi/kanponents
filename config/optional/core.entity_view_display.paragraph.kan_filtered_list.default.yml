@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.filtered_list.kan_field_background_color
-    - field.field.paragraph.filtered_list.kan_field_heading
-    - field.field.paragraph.filtered_list.kan_field_overline
-    - field.field.paragraph.filtered_list.kan_field_remove_top_padding
-    - field.field.paragraph.filtered_list.kan_field_views
+    - field.field.paragraph.kan_filtered_list.kan_field_background_color
+    - field.field.paragraph.kan_filtered_list.kan_field_heading
+    - field.field.paragraph.kan_filtered_list.kan_field_overline
+    - field.field.paragraph.kan_filtered_list.kan_field_remove_top_padding
+    - field.field.paragraph.kan_filtered_list.kan_field_views
     - paragraphs.paragraphs_type.kan_filtered_list
   module:
     - options

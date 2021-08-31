@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.hero.kan_field_background
-    - field.field.paragraph.hero.kan_field_heading
-    - field.field.paragraph.hero.kan_field_hero_overlay
-    - field.field.paragraph.hero.kan_field_remove_bottom_padding
-    - field.field.paragraph.hero.kan_field_text
+    - field.field.paragraph.kan_hero.kan_field_background
+    - field.field.paragraph.kan_hero.kan_field_heading
+    - field.field.paragraph.kan_hero.kan_field_hero_overlay
+    - field.field.paragraph.kan_hero.kan_field_remove_bottom_padding
+    - field.field.paragraph.kan_hero.kan_field_text
     - paragraphs.paragraphs_type.kan_hero
   module:
     - media_library

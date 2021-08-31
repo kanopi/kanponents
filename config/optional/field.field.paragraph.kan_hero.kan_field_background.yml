@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.kan_field_background
-    - media.type.image
-    - media.type.remote_video
+    - media.type.kan_image
+    - media.type.kan_remote_video
     - paragraphs.paragraphs_type.kan_hero
 id: paragraph.hero.kan_field_background
 field_name: kan_field_background
@@ -20,8 +20,8 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
-      remote_video: remote_video
+      image: kan_image
+      remote_video: kan_remote_video
     sort:
       field: _none
     auto_create: false

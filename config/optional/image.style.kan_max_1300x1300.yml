@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: kan_max_1300x1300
+label: kan_max_1300x1300
+effects:
+  2b2902f5-8ea3-43b3-86e9-065a51f0f61e:
+    uuid: 2b2902f5-8ea3-43b3-86e9-065a51f0f61e
+    id: image_scale
+    weight: 1
+    data:
+      width: 1300
+      height: 1300
+      upscale: false

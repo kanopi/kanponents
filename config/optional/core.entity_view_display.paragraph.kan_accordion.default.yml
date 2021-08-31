@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.accordion.kan_field_accordion_item
-    - field.field.paragraph.accordion.kan_field_heading
+    - field.field.paragraph.kan_accordion.kan_field_accordion_item
+    - field.field.paragraph.kan_accordion.kan_field_heading
     - paragraphs.paragraphs_type.kan_accordion
   module:
     - entity_reference_revisions
