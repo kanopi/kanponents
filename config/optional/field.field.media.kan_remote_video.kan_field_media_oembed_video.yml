@@ -5,7 +5,7 @@ dependencies:
     - field.storage.media.kan_field_media_oembed_video
     - media.type.kan_remote_video
 id: media.remote_video.kan_field_media_oembed_video
-field_name: kan_ield_media_oembed_video
+field_name: kan_field_media_oembed_video
 entity_type: media
 bundle: kan_remote_video
 label: 'Youtube Remote video URL'
