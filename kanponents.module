@@ -18,9 +18,6 @@ function kanponents_theme($existing, $type, $theme, $path) {
     'paragraph__kan_accordion_item' => [
       'base hook' => 'paragraph',
     ],
-    'paragraph__kan_block' => [
-      'base hook' => 'paragraph',
-    ],
     'paragraph__kan_card' => [
       'base hook' => 'paragraph',
     ],
@@ -70,6 +67,9 @@ function kanponents_theme($existing, $type, $theme, $path) {
       'base hook' => 'paragraph',
     ],
     'field__kan_columns__field_columns__columns' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__kan_field_columns__kan-columns' => [
       'base hook' => 'paragraph',
     ],
   ];
