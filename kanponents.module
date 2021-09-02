@@ -69,7 +69,7 @@ function kanponents_theme($existing, $type, $theme, $path) {
     'field__kan_field_components' => [
       'base hook' => 'paragraph',
     ],
-    'field__kan_paragraph_field_columns__columns' => [
+    'field__kan_columns__field_columns__columns' => [
       'base hook' => 'paragraph',
     ],
   ];
