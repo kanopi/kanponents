@@ -60,16 +60,13 @@ function kanponents_theme($existing, $type, $theme, $path) {
     'paragraph__kan_video_modal' => [
       'base hook' => 'paragraph',
     ],
-    'field__entity_reference_revisions' => [
-      'base hook' => 'paragraph',
-    ],
     'field__kan_field_components' => [
       'base hook' => 'paragraph',
     ],
     'field__kan_columns__field_columns__columns' => [
       'base hook' => 'paragraph',
     ],
-    'field__paragraph__kan_field_columns__kan-columns' => [
+    'field__paragraph__kan_field_columns__kan_columns' => [
       'base hook' => 'paragraph',
     ],
   ];

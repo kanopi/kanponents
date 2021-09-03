@@ -19,7 +19,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      remote_video: kan_remote_video
+      kan_remote_video: kan_remote_video
     sort:
       field: _none
     auto_create: false
