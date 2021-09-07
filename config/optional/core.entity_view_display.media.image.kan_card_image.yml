@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.kan_card_image
     - field.field.media.kan_image.kan_field_media_image
-    - media.type.image
+    - media.type.kan_image
     - responsive_image.styles.kan_medium
   module:
     - responsive_image
