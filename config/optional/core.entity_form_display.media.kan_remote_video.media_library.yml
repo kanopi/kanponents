@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.kan_media_library
+    - core.entity_form_mode.media.media_library
     - field.field.media.kan_remote_video.kan_field_fallback_image
     - field.field.media.kan_remote_video.kan_field_media_oembed_video
     - media.type.kan_remote_video
-id: media.remote_video.kan_media_library
+id: media.kan_remote_video.media_library
 targetEntityType: media
 bundle: kan_remote_video
 mode: media_library

@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.kan_card_image
-    - field.field.media.image.kan_field_media_image
-    - media.type.kan_image
+    - field.field.media.kan_image.kan_field_media_image
+    - media.type.image
     - responsive_image.styles.kan_medium
   module:
     - responsive_image
@@ -17,7 +17,7 @@ content:
     label: hidden
     weight: 0
     settings:
-      responsive_image_style: medium
+      responsive_image_style: kan_medium
       image_link: ''
     third_party_settings: {  }
     type: responsive_image

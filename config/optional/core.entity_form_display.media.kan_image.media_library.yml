@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.kan_media_library
+    - core.entity_form_mode.media.media_library
     - field.field.media.image.kan_field_media_image
     - image.style.kan_thumbnail
     - media.type.kan_image
   module:
     - image
-id: media.image.kan_media_library
+id: media.image.media_library
 targetEntityType: media
 bundle: kan_image
 mode: media_library
