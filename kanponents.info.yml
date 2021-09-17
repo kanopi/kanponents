@@ -11,6 +11,7 @@ dependencies:
   - link_attributes:link_attributes
   - media:media
   - media_library:media_library
+  - media_library_edit:media_library_edit
   - paragraphs:paragraphs
   - responsive_image:responsive_image
   - twig_field_value:twig_field_value
