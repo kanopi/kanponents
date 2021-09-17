@@ -3,7 +3,18 @@
   "description": "A reusable Paragraph Bundle built for USCF.",
   "type": "drupal-module",
   "require": {
-    "drupal/core": "*"
+    "drupal/block_field": "*",
+    "drupal/breakpoint": "*",
+    "drupal/core": "*",
+    "drupal/entity_reference_revisions": "*",
+    "drupal/field_group": "*",
+    "drupal/link_attributes": "*",
+    "drupal/media": "*",
+    "drupal/media_library": "*",
+    "drupal/paragraphs": "*",
+    "drupal/responsive_image": "*",
+    "drupal/twig_field_value": "*",
+    "drupal/viewfield": "*",
   },
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev"
