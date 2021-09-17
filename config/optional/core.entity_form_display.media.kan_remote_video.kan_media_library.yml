@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.media_library
+    - core.entity_form_mode.media.kan_media_library
     - field.field.media.kan_remote_video.kan_field_fallback_image
     - field.field.media.kan_remote_video.kan_field_media_oembed_video
     - media.type.kan_remote_video
 id: media.kan_remote_video.media_library
 targetEntityType: media
 bundle: kan_remote_video
-mode: media_library
+mode: kan_media_library
 content:
   name:
     type: string_textfield
@@ -21,8 +21,8 @@ content:
     region: content
 hidden:
   created: true
-  field_fallback_image: true
-  field_media_oembed_video: true
+  kan_field_fallback_image: true
+  kan_field_media_oembed_video: true
   path: true
   status: true
   uid: true

@@ -6,7 +6,7 @@ dependencies:
       - media_library
   module:
     - media
-id: media.media_library
+id: media.kan_media_library
 label: 'Media library'
 targetEntityType: media
 cache: true

@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.remote_video.kan_field_fallback_image
-    - field.field.media.remote_video.kan_field_media_oembed_video
+    - field.field.media.kan_remote_video.kan_field_fallback_image
+    - field.field.media.kan_remote_video.kan_field_media_oembed_video
     - media.type.kan_remote_video
   module:
     - media

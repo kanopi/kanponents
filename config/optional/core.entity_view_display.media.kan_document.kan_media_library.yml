@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.kan_media_library
     - field.field.media.kan_document.kan_field_media_file
     - image.style.kan_medium
     - media.type.kan_document
   module:
     - image
-id: media.kan_document.media_library
+id: media.kan_document.kan_media_library
 targetEntityType: media
 bundle: document
-mode: media_library
+mode: kan_media_library
 content:
   kan_thumbnail:
     type: image
@@ -24,7 +24,7 @@ content:
     region: content
 hidden:
   created: true
-  field_media_file: true
+  kan_field_media_file: true
   name: true
   search_api_excerpt: true
   uid: true
