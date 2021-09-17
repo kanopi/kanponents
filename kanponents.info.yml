@@ -1,25 +1,17 @@
-name: Kanopi Paragraphs
+name: Kanponents
 type: module
 description: A reusable collection of Paragraph bundles.
-core: 8.x
 core_version_requirement: ^8 || ^9
 package: Paragraphs
 dependencies:
-  - paragraphs:paragraphs
-  - field_group:field_group
-  - block_field:block_field
-  - link_attributes:link_attributes
-  - allowed_formats:allowed_formats
-  - maxlength:maxlength
-  - viewfield:viewfield
-  - entity_reference_revisions:entity_reference_revisions
-  - twig_field_value:twig_field_value
   - breakpoint:breakpoint
-  - responsive_image:responsive_image
+  - block_field:block_field
+  - entity_reference_revisions:entity_reference_revisions
+  - field_group:field_group
+  - link_attributes:link_attributes
   - media:media
   - media_library:media_library
-
-# Information added by Drupal.org packaging script on 2020-10-08
-version: '8.x.0'
-project: 'kanponents'
-datestamp: 1602190349
+  - paragraphs:paragraphs
+  - responsive_image:responsive_image
+  - twig_field_value:twig_field_value
+  - viewfield:viewfield
