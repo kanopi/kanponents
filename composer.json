@@ -15,7 +15,7 @@
     "drupal/paragraphs": "*",
     "drupal/responsive_image": "*",
     "drupal/twig_field_value": "*",
-    "drupal/viewfield": "*",
+    "drupal/viewfield": "*"
   },
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev"
