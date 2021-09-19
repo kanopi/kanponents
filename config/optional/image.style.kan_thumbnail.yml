@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: kan_thumbnail
+label: 'Thumbnail (200x200)'
+effects:
+  52c387d4-1945-11ec-9621-0242ac130002:
+    uuid: 52c387d4-1945-11ec-9621-0242ac130002
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      upscale: false
