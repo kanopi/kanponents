@@ -19,12 +19,12 @@ Library of custom paragraph types.
 REQUIREMENTS
 ------------
 
-  * [Paragraphs](https://www.drupal.org/project/paragraphs)
-  * [Twig Field Value](https://www.drupal.org/project/paragraphs)
+  * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
   * [Field Group](https://www.drupal.org/project/field_group)
   * [Link Attributes](https://www.drupal.org/project/link_attributes)
-  * [View Field](https://www.drupal.org/project/viewfield)
-  * [Entity Reference Revisions](https://www.drupal.org/project/entity_reference_revisions)
+  * [Paragraphs](https://www.drupal.org/project/paragraphs)
+  * [Twig Field Value](https://www.drupal.org/project/paragraphs)
+  * [View Field](https://www.drupal.org/project/viewsreference)
 
 
 INSTALLATION

@@ -15,4 +15,4 @@ dependencies:
   - paragraphs:paragraphs
   - responsive_image:responsive_image
   - twig_field_value:twig_field_value
-  - viewfield:viewfield
+  - viewsreference:viewsreference

@@ -10,7 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.kan_filtered_list
   module:
     - options
-    - viewfield
+    - viewsreference
 id: paragraph.kan_filtered_list.default
 targetEntityType: paragraph
 bundle: kan_filtered_list
@@ -50,14 +50,13 @@ content:
     type: boolean
     region: content
   kan_field_views:
-    weight: 2
+    weight: 5
     label: hidden
     settings:
-      view_title: hidden
-      empty_view_title: hidden
-      always_build_output: false
+      plugin_types:
+        - block
     third_party_settings: {  }
-    type: viewfield_default
+    type: viewsreference_formatter
     region: content
 hidden:
   search_api_excerpt: true

@@ -3,15 +3,15 @@ status: true
 dependencies:
   module:
     - paragraphs
-    - viewfield
     - views
+    - viewsreference
 id: paragraph.kan_field_views
 field_name: kan_field_views
 entity_type: paragraph
-type: viewfield
+type: viewsreference
 settings:
   target_type: view
-module: viewfield
+module: viewsreference
 locked: false
 cardinality: 1
 translatable: true

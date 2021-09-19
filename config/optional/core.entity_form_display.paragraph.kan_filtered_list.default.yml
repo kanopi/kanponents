@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.kan_filtered_list.kan_field_views
     - paragraphs.paragraphs_type.kan_filtered_list
   module:
-    - viewfield
+    - viewsreference
 id: paragraph.kan_filtered_list.default
 targetEntityType: paragraph
 bundle: kan_filtered_list
@@ -45,10 +45,10 @@ content:
     type: boolean_checkbox
     region: content
   kan_field_views:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
-    type: viewfield_select
+    type: viewsreference_select
     region: content
 hidden:
   created: true

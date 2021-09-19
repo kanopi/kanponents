@@ -17,6 +17,6 @@
         "drupal/paragraphs": "*",
         "drupal/responsive_image": "*",
         "drupal/twig_field_value": "*",
-        "drupal/viewfield": "*"
+        "drupal/viewsreference": "*"
     }
 }
