@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.image.kan_field_media_image
-    - image.style.thumbnail
+    - image.style.kan_thumbnail
     - media.type.kan_image
   module:
     - image
@@ -23,7 +23,7 @@ content:
     weight: 0
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: kan_thumbnail
     third_party_settings: {  }
     type: image_image
     region: content

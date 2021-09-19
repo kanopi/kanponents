@@ -6,7 +6,7 @@ dependencies:
     - media.type.kan_document
   module:
     - file
-id: media.document.kan_field_media_file
+id: media.kan_document.kan_field_media_file
 field_name: kan_field_media_file
 entity_type: media
 bundle: kan_document

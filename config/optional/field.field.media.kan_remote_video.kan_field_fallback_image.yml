@@ -5,7 +5,7 @@ dependencies:
     - field.storage.media.kan_field_fallback_image
     - media.type.kan_image
     - media.type.kan_remote_video
-id: media.remote_video.kan_field_fallback_image
+id: media.kan_remote_video.kan_field_fallback_image
 field_name: kan_field_fallback_image
 entity_type: media
 bundle: kan_remote_video

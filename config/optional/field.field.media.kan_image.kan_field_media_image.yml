@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.kan_media.field_media_image
+    - field.storage.kan_media.kan_field_media_image
     - media.type.kan_image
   module:
     - image
-id: media.image.kan_field_media_image
+id: media.kan_image.kan_field_media_image
 field_name: kan_field_media_image
 entity_type: media
 bundle: kan_image
