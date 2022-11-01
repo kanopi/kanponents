@@ -1,0 +1,4 @@
+kan_numbered_list:
+  css:
+    component:
+      css/numlist.css: { preprocess: false, media: screen }

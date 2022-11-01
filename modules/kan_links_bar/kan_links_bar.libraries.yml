@@ -1,0 +1,4 @@
+kan_linksbar:
+  css:
+    component:
+      css/linksbar.css: { preprocess: false, media: screen }

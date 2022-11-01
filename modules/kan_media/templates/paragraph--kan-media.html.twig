@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.kan_field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{# Check for top padding remove #}
+{% if content.kan_field_full_width_media[0]["#markup"] == 1 %}
+  {% set full_width_media = 'c-media--full-width' %}
+{% endif %}
+
+{# The offset if it exists. #}
+{% if content.kan_field_image_offset_color | render %}
+  {% set offset_color = 'offset-color' %}
+  {% set offset = 'offset-color--' ~ content.kan_field_image_offset_color.0["#markup"] %}
+{% endif %}
+
+{# The media bundle. #}
+{% set bundle = content.kan_field_media.0["#media"].bundle.getString() %}
+
+{{ attach_library('kan_media/kan_media') }}
+
+{% set classes = [
+  'c-media',
+  'c-media--' ~ bundle | clean_class,
+  offset_color,
+  full_width_media | clean_class,
+  offset | clean_class
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if ( bundle == 'image' ) or ( bundle == 'remote_video' ) %}
+    <figure class="c-media__image-video">
+      {{ content.kan_field_media | field_value }}
+
+      {% if content.kan_field_caption | render %}
+        <figcaption class="c-media__caption">
+          {{ content.kan_field_caption | field_value }}
+        </figcaption>
+      {% endif %}
+    </figure>
+
+  {% else %}
+    {# Docuemnts et al. #}
+    {{ content.kan_field_media | field_value }}
+  {% endif %}
+</div>

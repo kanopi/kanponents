@@ -1,0 +1,4 @@
+kan_hero:
+  css:
+    component:
+      css/hero.css: { preprocess: false, media: screen }

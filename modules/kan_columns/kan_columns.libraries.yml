@@ -1,0 +1,4 @@
+kan_columns:
+  css:
+    component:
+      css/columns.css: { preprocess: false, media: screen }

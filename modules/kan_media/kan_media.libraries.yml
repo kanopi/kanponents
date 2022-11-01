@@ -1,0 +1,4 @@
+kan_media:
+  css:
+    component:
+      css/media.css: { preprocess: false, media: screen }

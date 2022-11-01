@@ -1,0 +1,7 @@
+kan_video_modal:
+  css:
+    component:
+      css/video-modal.css: { preprocess: false, media: screen }
+  js:
+    js/a11y-dialog.js: { }
+    js/video-modal.js: { async: true }

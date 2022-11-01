@@ -1,0 +1,7 @@
+name: Kanponents Media
+description: Contains the Media Paragraph for Kanponents
+type: module
+core_version_requirement: ^9 || ^10
+package: Kanponents
+dependencies:
+  - drupal:kanponents

@@ -1,0 +1,4 @@
+kan_quicklinks:
+  css:
+    component:
+      css/quicklinks.css: { preprocess: false, media: screen }

@@ -1,0 +1,7 @@
+name: Kanponents Links Bar
+description: Contains the Links Bar and Links Bar Item Paragraphs for Kanponents
+type: module
+core_version_requirement: ^9 || ^10
+package: Kanponents
+dependencies:
+  - drupal:kanponents

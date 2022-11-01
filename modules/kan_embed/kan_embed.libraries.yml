@@ -1,0 +1,4 @@
+kan_calendar:
+  css:
+   component:
+     css/calendar.css: {}

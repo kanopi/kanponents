@@ -1,0 +1,7 @@
+name: Kanponents Accordion
+description: Contains the Accordion and Accordion Item Paragraphs for Kanponents
+type: module
+core_version_requirement: ^9 || ^10
+package: Kanponents
+dependencies:
+  - drupal:kanponents

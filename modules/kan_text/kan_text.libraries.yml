@@ -1,0 +1,4 @@
+kan_text_block:
+  css:
+    component:
+      css/text-block.css: { preprocess: false, media: screen }

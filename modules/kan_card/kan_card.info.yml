@@ -1,0 +1,7 @@
+name: Kanponents Card
+description: Contains the Card and Card Container Paragraphs for Kanponents
+type: module
+core_version_requirement: ^9 || ^10
+package: Kanponents
+dependencies:
+  - drupal:kanponents

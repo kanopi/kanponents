@@ -1,0 +1,4 @@
+kan_filtered_list:
+  css:
+    component:
+      css/filtered-list.css: { preprocess: false, media: screen }

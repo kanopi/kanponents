@@ -1,0 +1,7 @@
+name: Kanponents Hero
+description: Contains the Hero Paragraph for Kanponents
+type: module
+core_version_requirement: ^9 || ^10
+package: Kanponents
+dependencies:
+  - drupal:kanponents

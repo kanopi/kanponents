@@ -1,0 +1,6 @@
+kan_accordion:
+  css:
+    component:
+      css/accordion.css: { preprocess: false, media: screen }
+  js:
+    js/van11y-accessible-accordion-aria.js: { defer: true, async: true }

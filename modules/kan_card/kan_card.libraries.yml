@@ -1,0 +1,13 @@
+
+kan_cards:
+  css:
+    component:
+      css/cards.css: { preprocess: false, media: screen }
+
+kan_cards_carousel:
+  css:
+    component:
+      css/tiny-slider.css: { preprocess: false, media: screen }
+  js:
+    js/tiny-slider.js: { }
+    js/cards-carousel.js: { }

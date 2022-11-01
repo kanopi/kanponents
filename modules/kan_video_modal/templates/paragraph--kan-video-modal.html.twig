@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.kan_field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set paragraph_id = paragraph.id() %}
+
+{{ attach_library('kan_video_modal/kan_video_modal') }}
+
+{% set classes = [
+  'video-modal',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+
+  {% if content.kan_field_heading | render %}
+    <a class="link-bg link-bg--video"
+        data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ content.kan_field_heading | field_value }}</a>
+  {% else %}
+    <a class="link-bg link-bg--video"
+        data-a11y-dialog-show="video-dialog-{{- paragraph_id -}}" role="button">{{ 'Watch the video'|t }}</a>
+  {% endif %}
+
+  {# Hidden div that becomes the modal. #}
+  <div class="dialog" id="video-dialog-{{- paragraph_id -}}" aria-hidden="true">
+    <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+    <div role="dialog" class="dialog-content" aria-labelledby="video-dialog-title" aria-describedby="video-dialog-description">
+
+      {# Modal close button. #}
+      <button
+        data-a11y-dialog-hide
+        class="dialog-close"
+        aria-label="Close this dialog window">
+      </button>
+
+      {# Main modal content. #}
+      {% if content.kan_field_heading | render %}
+        <h2 class="h4">{{ content.kan_field_heading | field_value }}</h2>
+      {% else %}
+        <h2 class="h4"> {{ 'Watch the video'|t }}</h2>
+      {% endif %}
+
+      <div id="video-dialog-description-{{- paragraph_id -}}">
+        {{ content.kan_field_media | field_value }}
+      </div>
+    </div>
+  </div>
+  {# // End hidden div. #}
+</div>

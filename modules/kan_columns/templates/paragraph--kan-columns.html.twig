@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.kan_field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('kan_columns/kan_columns') }}
+
+{% if content.kan_field_vert_alignment | render %}
+  {% set vert_align = 'text-vert-align--' ~ content.kan_field_vert_alignment[0]["#markup"] %}
+{% endif %}
+
+{# Set the background offset. #}
+{% if content.kan_field_background_offset | render %}
+  {% set offset = 'has-offset' %}
+  {% set cols_offset = 'columns--offset-' ~ content.kan_field_background_offset[0]["#markup"] %}
+{% endif %}
+
+{# Check for top padding remove #}
+{% if content.kan_field_remove_top_padding[0]["#markup"] == 1 %}
+  {% set remove_top_padding = 'remove-top-padding' %}
+{% endif %}
+
+{# Set the background color. #}
+{% if content.kan_field_background_color | render %}
+  {% set bg = 'columns--' ~ content.kan_field_background_color[0]["#markup"] %}
+  {# Class for any background so we can add padding. #}
+  {% set has_bg = 'has-bg' %}
+
+  {% if content.kan_field_background_color[0]["#markup"] != 'background-gray' %}
+    {# If not gray, add a general class. #}
+    {% set has_dark_bg = 'has-dark-bg' %}
+  {% endif %}
+
+{% endif %}
+
+{# Set the column style. #}
+{% if content.kan_field_column_style | render %}
+  {% set cols_layout = 'columns--layout-' ~ content.kan_field_column_style[0]["#markup"] %}
+{% endif %}
+
+{% set classes = [
+  'columns',
+  offset,
+  cols_offset,
+  vert_align | clean_class,
+  has_bg,
+  has_dark_bg,
+  remove_top_padding,
+  bg | clean_class,
+  cols_layout | clean_class,
+] %}
+
+{# Set the edge to edge class. #}
+{% if content.kan_field_full_width[0]["#markup"] == 1 %}
+  <div class="columns__full-width">
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}>
+    <div class="columns__wrap">
+      {{ content.kan_field_columns }}
+    </div>
+</div>
+
+{% if content.kan_field_full_width[0]["#markup"] == 1 %}
+  </div>
+{% endif %}
+
