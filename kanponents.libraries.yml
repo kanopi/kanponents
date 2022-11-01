@@ -1,26 +1,9 @@
-kan_hero:
-  css:
-    component:
-      css/hero.css: { preprocess: false, media: screen }
-
 kan_tabs:
   css:
     component:
       css/tabs.css: { preprocess: false, media: screen }
   js:
     js/van11y-accessible-tab-panel-aria.js: { defer: true, async: true }
-
-kan_accordion:
-  css:
-    component:
-      css/accordion.css: { preprocess: false, media: screen }
-  js:
-    js/van11y-accessible-accordion-aria.js: { defer: true, async: true }
-
-kan_text_block:
-  css:
-    component:
-      css/text-block.css: { preprocess: false, media: screen }
 
 kan_video_bg:
   js:
@@ -29,58 +12,6 @@ kan_video_bg:
   dependencies:
     - core/jquery
 
-kan_cards:
-  css:
-    component:
-      css/cards.css: { preprocess: false, media: screen }
-
-kan_cards_carousel:
-  css:
-    component:
-      css/tiny-slider.css: { preprocess: false, media: screen }
-  js:
-    js/tiny-slider.js: { }
-    js/cards-carousel.js: { }
-
-kan_linksbar:
-  css:
-    component:
-      css/linksbar.css: { preprocess: false, media: screen }
-
-kan_quicklinks:
-  css:
-    component:
-      css/quicklinks.css: { preprocess: false, media: screen }
-
-kan_numbered_list:
-  css:
-    component:
-      css/numlist.css: { preprocess: false, media: screen }
-
-kan_columns:
-  css:
-    component:
-      css/columns.css: { preprocess: false, media: screen }
-
-kan_media:
-  css:
-    component:
-      css/media.css: { preprocess: false, media: screen }
-
-kan_filtered_list:
-  css:
-    component:
-      css/filtered-list.css: { preprocess: false, media: screen }
-
-kan_video_modal:
-  css:
-    component:
-      css/video-modal.css: { preprocess: false, media: screen }
-  js:
-    js/a11y-dialog.js: { }
-    js/video-modal.js: { async: true }
-
 kan_file_link:
   js:
     js/file-link.js: { }
-    
