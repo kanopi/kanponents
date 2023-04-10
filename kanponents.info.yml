@@ -1,18 +1,21 @@
 name: Kanponents
 type: module
 description: A reusable collection of Paragraph bundles.
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: Paragraphs
 dependencies:
+  - allowed_formats:allowed_formats
   - breakpoint:breakpoint
   - block_field:block_field
   - entity_reference_revisions:entity_reference_revisions
   - field_group:field_group
   - link_attributes:link_attributes
+  - maxlength:maxlength
   - media:media
   - media_library:media_library
   - media_library_edit:media_library_edit
   - paragraphs:paragraphs
   - responsive_image:responsive_image
   - twig_field_value:twig_field_value
+  - viewfield:viewfield
   - viewsreference:viewsreference
