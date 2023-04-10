@@ -7,7 +7,6 @@
     "require": {
         "drupal/allowed_formats": "*",
         "drupal/block_field": "*",
-        "drupal/breakpoint": "*",
         "drupal/core": "*",
         "drupal/entity_reference_revisions": "*",
         "drupal/field_group": "*",
