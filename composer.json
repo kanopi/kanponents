@@ -13,10 +13,8 @@
         "drupal/link_attributes": "*",
         "drupal/maxlength": "*",
         "drupal/media": "*",
-        "drupal/media_library": "*",
         "drupal/media_library_edit": "*",
         "drupal/paragraphs": "*",
-        "drupal/responsive_image": "*",
         "drupal/twig_field_value": "*",
         "drupal/viewfield": "*",
         "drupal/viewsreference": "*"
