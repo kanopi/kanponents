@@ -12,7 +12,6 @@
         "drupal/field_group": "*",
         "drupal/link_attributes": "*",
         "drupal/maxlength": "*",
-        "drupal/media": "*",
         "drupal/media_library_edit": "*",
         "drupal/paragraphs": "*",
         "drupal/twig_field_value": "*",
