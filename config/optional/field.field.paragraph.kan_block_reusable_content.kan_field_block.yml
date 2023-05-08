@@ -17,8 +17,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  selection: categories
-  selection_settings:
-    categories:
-      Custom: Custom
+  selection: reusable_content
+  selection_settings: {  }
 field_type: block_field
