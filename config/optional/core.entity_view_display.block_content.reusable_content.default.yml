@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reusable_content
+    - field.field.block_content.reusable_content.body
+  module:
+    - text
+id: block_content.reusable_content.default
+targetEntityType: block_content
+bundle: reusable_content
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

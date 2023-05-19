@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.kan_field_block
+    - paragraphs.paragraphs_type.kan_block_reusable_content
+  module:
+    - block_field
+id: paragraph.kan_block_reusable_content.kan_field_block
+field_name: kan_field_block
+entity_type: paragraph
+bundle: kan_block_reusable_content
+label: Block
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: reusable_content
+  selection_settings: {  }
+field_type: block_field

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kan_block_reusable_content.kan_field_block
+    - paragraphs.paragraphs_type.kan_block_reusable_content
+  module:
+    - block_field
+id: paragraph.kan_block_reusable_content.default
+targetEntityType: paragraph
+bundle: kan_block_reusable_content
+mode: default
+content:
+  kan_field_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden:
+  search_api_excerpt: true
