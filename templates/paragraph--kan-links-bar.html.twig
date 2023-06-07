@@ -54,22 +54,24 @@
       <div class="links-bar__container">
         <div class="links-bar__wrap">
 
-          {% for key, item in content.kan_field_linksbar_item if key|first != '#' %}
-            <div class="links-bar__item links-bar__item--index-{{- loop.index -}}">
+          {% for key, item in content.kan_field_linksbar_item %}
+            {% if key|first != '#' %}
+              <div class="links-bar__item links-bar__item--index-{{- loop.index -}}">
 
-              {% if item['#paragraph'].field_link.0.options.attributes.target | render %}
-                {% set target = 'rel=noopener target = _' ~ item['#paragraph'].field_link.0.options.attributes.target %}
-              {% endif %}
+                {% if item['#paragraph'].field_link.0.options.attributes.target | render %}
+                  {% set target = 'rel=noopener target = _' ~ item['#paragraph'].field_link.0.options.attributes.target %}
+                {% endif %}
 
-              <a class="links-bar__item-link"
-                 href="{{ item['#paragraph'].field_link.0.url }}"
-                {{ target }}
-                 role="button"
-                 title="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}"
-                 aria-label="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}">
-                {{ item['#paragraph'].field_link.title }}
-              </a>
-            </div>
+                <a class="links-bar__item-link"
+                   href="{{ item['#paragraph'].field_link.0.url }}"
+                  {{ target }}
+                   role="button"
+                   title="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}"
+                   aria-label="{{ 'Click this link,'|t }} {{ item['#paragraph'].field_link.title }}">
+                  {{ item['#paragraph'].field_link.title }}
+                </a>
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
